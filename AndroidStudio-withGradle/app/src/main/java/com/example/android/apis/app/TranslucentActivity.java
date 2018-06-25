@@ -1,7 +1,7 @@
 /*
  * KJK_TALK APIDEMOS: App-> Activity-> Translucent
- * AndroidManifest.xmlÆÄÀÏ¿¡¼­ @style/Theme.Translucent¼Ó¼ºÀ» ÅëÇØ default·Î ¼³Á¤µÈ 
- * Foreground°¡ ¹İÅõ¸íÇÏ°Ô µÇ¾î ±âÁ¸ list Background°¡ º¸ÀÎ´Ù.
+ * AndroidManifest.xmlíŒŒì¼ì—ì„œ @style/Theme.Translucentì†ì„±ì„ í†µí•´ defaultë¡œ ì„¤ì •ëœ 
+ * Foregroundê°€ ë°˜íˆ¬ëª…í•˜ê²Œ ë˜ì–´ ê¸°ì¡´ list Backgroundê°€ ë³´ì¸ë‹¤.
 
 
  * Copyright (C) 2007 The Android Open Source Project

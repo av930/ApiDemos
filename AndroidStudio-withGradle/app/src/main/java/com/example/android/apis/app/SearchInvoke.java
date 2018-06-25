@@ -1,10 +1,10 @@
 /*
  * KJK_TALK APIDEMOS: App-> Search-> Invoke Search 
- * startSearch°¡ main method·Î °Ë»öÃ¢À» ¿­°í °Ë»öÀ» ÇÏ°Ô µÈ´Ù.ÀÌ¶§ ¾Æ·¡ ¿É¼ÇÀ» Âü°íÇÏ±â ¹Ù¶õ´Ù.
- * °Ë»öÇÒ¶§ ¾î¶² °Ë»öÃ¢À» ¿­Áö¸¦ setDefaultKeyMode·Î °áÁ¤ÇÒ¼ö ÀÖ´Âµ¥,activity.java¿¡ º¸¸é 
- * DEFAULT_KEYS_SEARCH_LOCALÀº local¿¡¼­, DEFAULT_KEYS_SEARCH_GLOBAL´Â global¿¡¼­ Ã£´Âµ¥, 
- * ÀÌ¶§ startSearch°ªÀÇ global flag°¡ false¿Í trueÀÇ Â÷ÀÌ·Î ±¸º°ÇÑ´Ù.
- * DEFAULT_KEYS_DIALERÀÏ¶§´Â intent·Î ACTION_DIAL, uri·Î dialerÀÓÀ» ¼³Á¤ÇÏ¿© dialer¿¡¼­ Ã£°Ô ÇÑ´Ù. *
+ * startSearchê°€ main methodë¡œ ê²€ìƒ‰ì°½ì„ ì—´ê³  ê²€ìƒ‰ì„ í•˜ê²Œ ëœë‹¤.ì´ë•Œ ì•„ë˜ ì˜µì…˜ì„ ì°¸ê³ í•˜ê¸° ë°”ë€ë‹¤.
+ * ê²€ìƒ‰í• ë•Œ ì–´ë–¤ ê²€ìƒ‰ì°½ì„ ì—´ì§€ë¥¼ setDefaultKeyModeë¡œ ê²°ì •í• ìˆ˜ ìˆëŠ”ë°,activity.javaì— ë³´ë©´ 
+ * DEFAULT_KEYS_SEARCH_LOCALì€ localì—ì„œ, DEFAULT_KEYS_SEARCH_GLOBALëŠ” globalì—ì„œ ì°¾ëŠ”ë°, 
+ * ì´ë•Œ startSearchê°’ì˜ global flagê°€ falseì™€ trueì˜ ì°¨ì´ë¡œ êµ¬ë³„í•œë‹¤.
+ * DEFAULT_KEYS_DIALERì¼ë•ŒëŠ” intentë¡œ ACTION_DIAL, urië¡œ dialerì„ì„ ì„¤ì •í•˜ì—¬ dialerì—ì„œ ì°¾ê²Œ í•œë‹¤. *
  
  * Copyright (C) 2008 The Android Open Source Project
  *
@@ -66,7 +66,7 @@ public class SearchInvoke extends Activity
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         
-        // Inflate our UI from its XML layout description. ÇöÀçÈ­¸éÀÇ UI·Î »ı¼ºµÈ xmlÀ» ÃÊ±âÈ­ È­¸éÀ¸·Î ¼³Á¤ÇÑ´Ù.
+        // Inflate our UI from its XML layout description. í˜„ì¬í™”ë©´ì˜ UIë¡œ ìƒì„±ëœ xmlì„ ì´ˆê¸°í™” í™”ë©´ìœ¼ë¡œ ì„¤ì •í•œë‹¤.
         setContentView(R.layout.search_invoke);
         
         // Get display items for later interaction
@@ -76,11 +76,11 @@ public class SearchInvoke extends Activity
         mQueryAppData = (EditText) findViewById(R.id.txt_query_appdata);
         
         // Populate items,  
-        //KJK_TALK: R.array.search_menuModes --> ¸®½ºÆ®¿¡¼­ »ç¿ëµÉ item list 
-        //android.R.layout.simple_spinner_item --> ¸®½ºÆ®¿¡¼­ »ç¿ëÇÒ item layout
+        //KJK_TALK: R.array.search_menuModes --> ë¦¬ìŠ¤íŠ¸ì—ì„œ ì‚¬ìš©ë  item list 
+        //android.R.layout.simple_spinner_item --> ë¦¬ìŠ¤íŠ¸ì—ì„œ ì‚¬ìš©í•  item layout
         ArrayAdapter<CharSequence> adapter = ArrayAdapter.createFromResource(
                             this, R.array.search_menuModes, android.R.layout.simple_spinner_item);
-        //KJK_TALK:list popup¿¡ ±âÁ¸ layoutÀÌ ¾Æ´Ñ radio ¹öÆ°ÀÌ ´Ş¸° »õ·Î¿î layoutÀ» ¼³Á¤ÇÑ´Ù.
+        //KJK_TALK:list popupì— ê¸°ì¡´ layoutì´ ì•„ë‹Œ radio ë²„íŠ¼ì´ ë‹¬ë¦° ìƒˆë¡œìš´ layoutì„ ì„¤ì •í•œë‹¤.
         adapter.setDropDownViewResource(android.R.layout.simple_spinner_dropdown_item);
         mMenuMode.setAdapter(adapter);
         
@@ -114,18 +114,18 @@ public class SearchInvoke extends Activity
     
     /** 
      * Called when your activity's options menu needs to be updated. 
-     KJK_TALK: option menu key¸¦ ´­·¶À»¶§ µ¿ÀÛÇÏ´Â listener
+     KJK_TALK: option menu keyë¥¼ ëˆŒë €ì„ë•Œ ë™ì‘í•˜ëŠ” listener
      */
     @Override
     public boolean onPrepareOptionsMenu(Menu menu) {
         super.onPrepareOptionsMenu(menu);
         MenuItem item;
         
-            // first, get rid of our menus (if any), ÇöÀç menu¸¦ Á¦°ÅÇÏ°í
+            // first, get rid of our menus (if any), í˜„ì¬ menuë¥¼ ì œê±°í•˜ê³ 
         menu.removeItem(0);
         menu.removeItem(1);
         
-            // next, add back item(s) based on current menu mode, »õ·Î¿î menu Ãß°¡
+            // next, add back item(s) based on current menu mode, ìƒˆë¡œìš´ menu ì¶”ê°€
         switch (mMenuMode.getSelectedItemPosition())
         {
         case MENUMODE_SEARCH_KEY:
@@ -146,21 +146,21 @@ public class SearchInvoke extends Activity
             break;
         }
 
-        //KJK_TALK: option menu¿¡¼­ µÎ¹øÂ° menu Ãâ·Â title
+        //KJK_TALK: option menuì—ì„œ ë‘ë²ˆì§¸ menu ì¶œë ¥ title
         item = menu.add(0, 1, 0, "Clear History");
         return true;
     }
     
     /** Handle the menu item selections */
-    //KJK_TALK: optionMenu¿¡¼­ Æ¯Á¤ menu¸¦ ¼±ÅÃÇßÀ»¶§ È£ÃâµÈ´Ù.
+    //KJK_TALK: optionMenuì—ì„œ íŠ¹ì • menuë¥¼ ì„ íƒí–ˆì„ë•Œ í˜¸ì¶œëœë‹¤.
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
         case 0:
-            //KJK_TALK: spinner¿¡¼­ ¼±ÅÃµÈ °ªÀ¸·Î switch¸¦ ÇÑ´Ù.
+            //KJK_TALK: spinnerì—ì„œ ì„ íƒëœ ê°’ìœ¼ë¡œ switchë¥¼ í•œë‹¤.
             switch (mMenuMode.getSelectedItemPosition()) {
             case MENUMODE_SEARCH_KEY:
-                //KJK_TALK: AlertDialog »ç¿ë¹ı, //MENUMODE_SEARCH_KEY ÀÏ¶§´Â msg¸¸ popup, Search key ¼­Ä¡°¡´É
+                //KJK_TALK: AlertDialog ì‚¬ìš©ë²•, //MENUMODE_SEARCH_KEY ì¼ë•ŒëŠ” msgë§Œ popup, Search key ì„œì¹˜ê°€ëŠ¥
                 new AlertDialog.Builder(this)
                     .setMessage("To invoke search, dismiss this dialog and press the search key" +
                                 " (F5 on the simulator).")
@@ -169,12 +169,12 @@ public class SearchInvoke extends Activity
                 break;
                 
             case MENUMODE_MENU_ITEM:
-                //MENUMODE_MENU_ITEM ÀÏ¶§´Â ±×³É ¹Ù·Î search
+                //MENUMODE_MENU_ITEM ì¼ë•ŒëŠ” ê·¸ëƒ¥ ë°”ë¡œ search
                 onSearchRequested();
                 break;
                 
             case MENUMODE_TYPE_TO_SEARCH:
-                //MENUMODE_TYPE_TO_SEARCH ÀÏ¶§´Â msg¸¸ popup
+                //MENUMODE_TYPE_TO_SEARCH ì¼ë•ŒëŠ” msgë§Œ popup
                 new AlertDialog.Builder(this)
                     .setMessage("To invoke search, dismiss this dialog and start typing.")
                     .setPositiveButton("OK", null)
@@ -204,12 +204,12 @@ public class SearchInvoke extends Activity
      * 
      * @return Returns true if search launched, false if activity blocks it
      */
-     //KJK_TALK: searchÇÔ¼ö¸¦ blockingÇÏ°Å³ª, edit textÀÇ search stringÀ» 
-     //searchbar¿¡ Á¦°øÇÏ´Â ±â´É, Á¦°ø½Ã bundle·Î advance context¸¦ Àü´ŞÇØÁÙ¼ö  ÀÖ´Ù. 
+     //KJK_TALK: searchí•¨ìˆ˜ë¥¼ blockingí•˜ê±°ë‚˜, edit textì˜ search stringì„ 
+     //searchbarì— ì œê³µí•˜ëŠ” ê¸°ëŠ¥, ì œê³µì‹œ bundleë¡œ advance contextë¥¼ ì „ë‹¬í•´ì¤„ìˆ˜  ìˆë‹¤. 
     @Override
     public boolean onSearchRequested() {
         // If your application absolutely must disable search, do it here.
-        // KJK_TALK:Spinner popup¿¡¼­ ¼±ÅÃÇÑ °ªÀÌ MENUMODE_DISABLED ÀÌ¶ó¸é search Ãë¼Ò
+        // KJK_TALK:Spinner popupì—ì„œ ì„ íƒí•œ ê°’ì´ MENUMODE_DISABLED ì´ë¼ë©´ search ì·¨ì†Œ
         if (mMenuMode.getSelectedItemPosition() == MENUMODE_DISABLED) {
             return false;
         }
@@ -218,7 +218,7 @@ public class SearchInvoke extends Activity
         // UI.  For this demo, we simply copy it from the user input field.
         // For most applications, you can simply pass null to startSearch() to
         // open the UI with an empty query string.
-        //KJK_TALK: ÇØ´ç ¹®ÀÚ¿­À» copyÇÏ¿©
+        //KJK_TALK: í•´ë‹¹ ë¬¸ìì—´ì„ copyí•˜ì—¬
         final String queryPrefill = mQueryPrefill.getText().toString();
         
         // Next, set up a bundle to send context-specific search data (if any)
@@ -234,12 +234,12 @@ public class SearchInvoke extends Activity
         }
         
         // Now call the Activity member function that invokes the Search Manager UI.
-        //KJK_TALK: String initialQuery=queryPrefill:queryÇÒ º¹»çÇÑ ¹®ÀÚ¿­ °ªÀ» ³Ö¾îÁÖ°í,
-        //boolean selectInitialQuery=false:trueÀÌ¸é query text°¡ selectµÇ¾î ÀÔ·Â½Ã 
-        //  replaceµÇ°í,falseÀÌ¸é textµÚ¿¡ addµÈ´Ù. 
-        //Bundle appSearchData=appDataBundle: searchÇÒ appÀÇ context¸¦ ±â·ÏÇÏ¿© filter¸¦ ÁÙ¼ö        
-        //boolean bGlobalSearch=true: trueÀÌ¸é webÀ» Æ÷ÇÔÇÑ ¸ğµç app¿¡¼­ Ã£°í, falseÀÌ¸é ÇØ´ç app¿¡¼­¸¸ Ã£´Â´Ù.
-        //  web°ú contactµî¿¡¼­ ¸ğµÎ Ã£À»·Á¸é true·Î ÇØÁØ´Ù.
+        //KJK_TALK: String initialQuery=queryPrefill:queryí•  ë³µì‚¬í•œ ë¬¸ìì—´ ê°’ì„ ë„£ì–´ì£¼ê³ ,
+        //boolean selectInitialQuery=false:trueì´ë©´ query textê°€ selectë˜ì–´ ì…ë ¥ì‹œ 
+        //  replaceë˜ê³ ,falseì´ë©´ textë’¤ì— addëœë‹¤. 
+        //Bundle appSearchData=appDataBundle: searchí•  appì˜ contextë¥¼ ê¸°ë¡í•˜ì—¬ filterë¥¼ ì¤„ìˆ˜        
+        //boolean bGlobalSearch=true: trueì´ë©´ webì„ í¬í•¨í•œ ëª¨ë“  appì—ì„œ ì°¾ê³ , falseì´ë©´ í•´ë‹¹ appì—ì„œë§Œ ì°¾ëŠ”ë‹¤.
+        //  webê³¼ contactë“±ì—ì„œ ëª¨ë‘ ì°¾ì„ë ¤ë©´ trueë¡œ í•´ì¤€ë‹¤.
         startSearch(queryPrefill, false, appDataBundle, false); 
         
         // Returning true indicates that we did launch the search, instead of blocking it.
@@ -259,7 +259,7 @@ public class SearchInvoke extends Activity
      * In this sample app we call this method from a "Clear History" menu item.  You could also 
      * implement the UI in your preferences, or any other logical place in your UI.
      */
-     //KJK_TALK: search history ¸¦ Áö¿ì´Â method
+     //KJK_TALK: search history ë¥¼ ì§€ìš°ëŠ” method
     private void clearSearchHistory() {
         SearchRecentSuggestions suggestions = new SearchRecentSuggestions(this, 
                 SearchSuggestionSampleProvider.AUTHORITY, SearchSuggestionSampleProvider.MODE);

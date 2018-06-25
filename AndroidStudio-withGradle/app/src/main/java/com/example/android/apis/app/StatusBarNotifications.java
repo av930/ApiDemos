@@ -1,7 +1,7 @@
 /*
  * KJK_TALK APIDEMOS: App-> Notification-> Status Bar
- Status Bar¿¡¼­ ICON°ú text¸¦ display Notification Pannel¿¡ »ğÀÔµÇ´Â list¸¦ 
- default Notification Panel°ú Customized NotificationÀ¸·Î ±¸ÇöÇÑ exampleÀ» º¼¼ö ÀÖ´Ù.
+ Status Barì—ì„œ ICONê³¼ textë¥¼ display Notification Pannelì— ì‚½ì…ë˜ëŠ” listë¥¼ 
+ default Notification Panelê³¼ Customized Notificationìœ¼ë¡œ êµ¬í˜„í•œ exampleì„ ë³¼ìˆ˜ ìˆë‹¤.
 
 
  * Copyright (C) 2007 The Android Open Source Project
@@ -55,7 +55,7 @@ public class StatusBarNotifications extends Activity {
         // Get the notification manager serivce.
         mNotificationManager = (NotificationManager) getSystemService(NOTIFICATION_SERVICE);
 
-        //Ã¹¹øÂ° 3°³ÀÇ iconÀº ticker msg¾øÀÌ ±×³É Ç¥½Ã, notification panel¿¡´Â Ç¥½ÃµÈ´Ù.
+        //ì²«ë²ˆì§¸ 3ê°œì˜ iconì€ ticker msgì—†ì´ ê·¸ëƒ¥ í‘œì‹œ, notification panelì—ëŠ” í‘œì‹œëœë‹¤.
         button = (Button) findViewById(R.id.happy);
         button.setOnClickListener(new Button.OnClickListener() {
             public void onClick(View v) {
@@ -79,7 +79,7 @@ public class StatusBarNotifications extends Activity {
             }
         });
 
-        //µÎ¹øÂ° 3°³ÀÇ iconÀº ticker msg¿Í  Ç¥½Ã, status bar¿Í notification panel µÑ´Ù Ç¥½Ã
+        //ë‘ë²ˆì§¸ 3ê°œì˜ iconì€ ticker msgì™€  í‘œì‹œ, status barì™€ notification panel ë‘˜ë‹¤ í‘œì‹œ
         button = (Button) findViewById(R.id.happyMarquee);
         button.setOnClickListener(new Button.OnClickListener() {
             public void onClick(View v) {
@@ -102,7 +102,7 @@ public class StatusBarNotifications extends Activity {
             }
         });
         
-        //¼¼¹øÂ° 3°³ÀÇ iconÀº ticker msgÀ» customized layoutÀ¸·Î Ç¥½Ã, status bar¿Í notification panel µÑ´Ù Ç¥½Ã
+        //ì„¸ë²ˆì§¸ 3ê°œì˜ iconì€ ticker msgì„ customized layoutìœ¼ë¡œ í‘œì‹œ, status barì™€ notification panel ë‘˜ë‹¤ í‘œì‹œ
         button = (Button) findViewById(R.id.happyViews);
         button.setOnClickListener(new Button.OnClickListener() {
             public void onClick(View v) {
@@ -124,7 +124,7 @@ public class StatusBarNotifications extends Activity {
             }
         });
         
-        //³×¹øÂ° 3°³´Â Sound, Vibrate Sound&Vib ·Î ¾Ë¶÷À» ¼³Á¤ÇÏ°í ¾Ë¶÷Àº noti panel¿¡ Ç¥½ÃµÇ¸ç, ÀÌ¸¦ click½Ã ¼³Á¤µÈ intent½ÇÇà
+        //ë„¤ë²ˆì§¸ 3ê°œëŠ” Sound, Vibrate Sound&Vib ë¡œ ì•ŒëŒì„ ì„¤ì •í•˜ê³  ì•ŒëŒì€ noti panelì— í‘œì‹œë˜ë©°, ì´ë¥¼ clickì‹œ ì„¤ì •ëœ intentì‹¤í–‰
         button = (Button) findViewById(R.id.defaultSound);
         button.setOnClickListener(new Button.OnClickListener() {
             public void onClick(View v) {
@@ -146,7 +146,7 @@ public class StatusBarNotifications extends Activity {
             }
         });
         
-        // ´Ù¼¸¹øÂ°´Â ¼³Á¤µÈ alarm ÇØÁ¦
+        // ë‹¤ì„¯ë²ˆì§¸ëŠ” ì„¤ì •ëœ alarm í•´ì œ
         button = (Button) findViewById(R.id.clear);
         button.setOnClickListener(new Button.OnClickListener() {
             public void onClick(View v) {
@@ -155,20 +155,20 @@ public class StatusBarNotifications extends Activity {
         });
     }
 
-    //Notification Panel¿¡¼­ ÇØ´ç noti¸¦ clickÇßÀ»°æ¿ì icon activity¸¦ launchÇÏ´Â method
+    //Notification Panelì—ì„œ í•´ë‹¹ notië¥¼ clickí–ˆì„ê²½ìš° icon activityë¥¼ launchí•˜ëŠ” method
     private PendingIntent makeMoodIntent(int moodId) {
         // The PendingIntent to launch our activity if the user selects this
         // notification.  Note the use of FLAG_UPDATE_CURRENT so that if there
         // is already an active matching pending intent, we will update its
         // extras (and other Intents in the array) to be the ones passed in here.
-        // KJK_CHECK: FLAG_ACTIVITY_NEW_TASK: »õ·Î¿î task¿¡¼­ ÇØ´ç activity¸¦ ½ÇÇà½ÃÄÑ¶ó.
-        // ±âÁ¸¿¡ ÇöÀç act¿Í ºñ½ÁÇÑ affinity°¡ ÀÖ´Ù¸é ±× task¿¡¼­ ½ÇÇàÇÏ°Ô µÈ´Ù.
+        // KJK_CHECK: FLAG_ACTIVITY_NEW_TASK: ìƒˆë¡œìš´ taskì—ì„œ í•´ë‹¹ activityë¥¼ ì‹¤í–‰ì‹œì¼œë¼.
+        // ê¸°ì¡´ì— í˜„ì¬ actì™€ ë¹„ìŠ·í•œ affinityê°€ ìˆë‹¤ë©´ ê·¸ taskì—ì„œ ì‹¤í–‰í•˜ê²Œ ëœë‹¤.
         PendingIntent contentIntent = PendingIntent.getActivity(this, 0,
                 new Intent(this, NotificationDisplay.class).putExtra("moodimg", moodId),
                 PendingIntent.FLAG_UPDATE_CURRENT);
         return contentIntent;
     }
-    //Status bar¿Í notification panel¿¡ noti¸¦ default¹æ¹ıÀ¸·Î displayÇÏµµ·Ï ÇÏ´Â method 
+    //Status barì™€ notification panelì— notië¥¼ defaultë°©ë²•ìœ¼ë¡œ displayí•˜ë„ë¡ í•˜ëŠ” method 
 //BEGIN_INCLUDE(intent_array)
     private PendingIntent makeDefaultIntent() {
         // A typical convention for notifications is to launch the user deeply
@@ -229,7 +229,7 @@ public class StatusBarNotifications extends Activity {
     }
 
 
-    //Status bar¿Í notification panel¿¡ noti¸¦ customized ¹æ¹ıÀ¸·Î displayÇÏµµ·Ï ÇÏ´Â method 
+    //Status barì™€ notification panelì— notië¥¼ customized ë°©ë²•ìœ¼ë¡œ displayí•˜ë„ë¡ í•˜ëŠ” method 
     private void setMoodView(int moodId, int textId) {
         // Instead of the normal constructor, we're going to use the one with no args and fill
         // in all of the data ourselves.  The normal one uses the default layout for notifications.
@@ -238,7 +238,7 @@ public class StatusBarNotifications extends Activity {
         Notification notif = new Notification();
 
         // This is who should be launched if the user selects our notification.
-        // click½Ã ¹«¾ùÀ» ¶ç¿ïÁö intentÁ¤ÀÇ        
+        // clickì‹œ ë¬´ì—‡ì„ ë„ìš¸ì§€ intentì •ì˜        
         notif.contentIntent = makeMoodIntent(moodId);
 
         // In this sample, we'll use the same text for the ticker and the expanded notification
@@ -249,8 +249,8 @@ public class StatusBarNotifications extends Activity {
         notif.icon = moodId;
 
         // our custom view
-        // KJK_TALK : RemoteViewÀÎ contentView·Î¼­ user customized view¸¦ ¼³Á¤ÇÒ¼ö ÀÖ´Ù.
-        // text¿Í image¸¦ ³Ö¾î contentView¿Ï¼º
+        // KJK_TALK : RemoteViewì¸ contentViewë¡œì„œ user customized viewë¥¼ ì„¤ì •í• ìˆ˜ ìˆë‹¤.
+        // textì™€ imageë¥¼ ë„£ì–´ contentViewì™„ì„±
         RemoteViews contentView = new RemoteViews(getPackageName(), R.layout.status_bar_balloon);
         contentView.setTextViewText(R.id.text, text);
         contentView.setImageViewResource(R.id.icon, moodId);
@@ -261,11 +261,11 @@ public class StatusBarNotifications extends Activity {
         mNotificationManager.notify(MOOD_NOTIFICATIONS, notif);
     }
 
-    //default notification panel list¿Í ºñ½ÁÇÏ³ª click½Ã ÀÌÀü È­¸éÀ¸·Î µ¹¾Æ°¡µµ·Ï µÇ¾î ÀÖ´Ù.
+    //default notification panel listì™€ ë¹„ìŠ·í•˜ë‚˜ clickì‹œ ì´ì „ í™”ë©´ìœ¼ë¡œ ëŒì•„ê°€ë„ë¡ ë˜ì–´ ìˆë‹¤.
     private void setDefault(int defaults) {
 
         // This is who should be launched if the user selects our notification.
-        //default notification panel list¿Í ºñ½ÁÇÏ³ª click½Ã ÀÌÀü È­¸éÀ¸·Î µ¹¾Æ°¡µµ·Ï µÇ¾î ÀÖ´Ù.
+        //default notification panel listì™€ ë¹„ìŠ·í•˜ë‚˜ clickì‹œ ì´ì „ í™”ë©´ìœ¼ë¡œ ëŒì•„ê°€ë„ë¡ ë˜ì–´ ìˆë‹¤.
         PendingIntent contentIntent = makeDefaultIntent();
 
         // In this sample, we'll use the same text for the ticker and the expanded notification

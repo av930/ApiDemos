@@ -1,7 +1,7 @@
 /*
  * KJK_TALK APIDEMOS: Views-> Lists-> 3. Cursor(Phone)
- List2.java ¿¹Á¦¿Ü °ÅÀÇ Èí»çÇÏ³ª, phone number¸¦ Ãâ·ÂÇÏ¸ç, 
- Ãâ·ÂÇÏ´Â layer°¡ 2 line layer·Î ±¸¼ºµÇ¾î ÀÖ´Ù.
+ List2.java ì˜ˆì œì™¸ ê±°ì˜ í¡ì‚¬í•˜ë‚˜, phone numberë¥¼ ì¶œë ¥í•˜ë©°, 
+ ì¶œë ¥í•˜ëŠ” layerê°€ 2 line layerë¡œ êµ¬ì„±ë˜ì–´ ìˆë‹¤.
 
 
  * Copyright (C) 2007 The Android Open Source Project

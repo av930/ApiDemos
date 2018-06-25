@@ -1,8 +1,8 @@
 /*
  * KJK_TALK APIDEMOS: App-> Notification-> Status Bar->StatusBarNotifications.java
- * StatusBarNotifications.java¿¡¼­ ÇØ´ç iconÀ» clickÇßÀ»°æ¿ì notification panel¿¡
- * µî·ÏµÇ´Âµ¥, ÀÌ¶§ ÇØ´ç list¸¦ clickÇÏ¸é icon ±×¸² activity¸¦ ¶ç¿öÁØ´Ù.
- * imageÀÚÃ¼¸¦ ÇÏ³ªÀÇ Activity·Î ¶ç¿î´Ù. ÇöÀç image Activity ±îÁö´Â ApiDemos¿¡¼­ ½ÇÇàµÈ´Ù.
+ * StatusBarNotifications.javaì—ì„œ í•´ë‹¹ iconì„ clickí–ˆì„ê²½ìš° notification panelì—
+ * ë“±ë¡ë˜ëŠ”ë°, ì´ë•Œ í•´ë‹¹ listë¥¼ clickí•˜ë©´ icon ê·¸ë¦¼ activityë¥¼ ë„ì›Œì¤€ë‹¤.
+ * imageìì²´ë¥¼ í•˜ë‚˜ì˜ Activityë¡œ ë„ìš´ë‹¤. í˜„ì¬ image Activity ê¹Œì§€ëŠ” ApiDemosì—ì„œ ì‹¤í–‰ëœë‹¤.
 
 
  * Copyright (C) 2007 The Android Open Source Project
@@ -52,20 +52,20 @@ public class NotificationDisplay extends Activity implements View.OnClickListene
         // Have the system blur any windows behind this one.
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_BLUR_BEHIND,
                 WindowManager.LayoutParams.FLAG_BLUR_BEHIND);
-        //relative layoutÀ» ¸¸µé°í
+        //relative layoutì„ ë§Œë“¤ê³ 
         RelativeLayout container = new RelativeLayout(this);
         
         ImageButton button = new ImageButton(this);
         button.setImageResource(getIntent().getIntExtra("moodimg", 0));
         button.setOnClickListener(this);
 
-        //¸¸µé¾îÁø relative layout¿¡ layoutparamÀ» ºÙÀÌ°í
+        //ë§Œë“¤ì–´ì§„ relative layoutì— layoutparamì„ ë¶™ì´ê³ 
         RelativeLayout.LayoutParams lp = new RelativeLayout.LayoutParams(
                 RelativeLayout.LayoutParams.WRAP_CONTENT,
                 RelativeLayout.LayoutParams.WRAP_CONTENT);
         lp.addRule(RelativeLayout.CENTER_IN_PARENT);
 
-        //layout¿¡ button°ú layoutparamÀ» ºÙÀÎ´Ù.
+        //layoutì— buttonê³¼ layoutparamì„ ë¶™ì¸ë‹¤.
         container.addView(button, lp);
         
         setContentView(container);
@@ -80,16 +80,16 @@ public class NotificationDisplay extends Activity implements View.OnClickListene
         // as part of the api demos app.  Note the use of NEW_TASK here,
         // since the notification display activity is run as a separate task.
         if (true){ 
-            //KJK_CHECK true or disable, activity ½ÇÇà¹æ¹ı 
-            //true: ÇöÀç activity°¡ contact½ÇÇàÁß¿¡ notifcation pannel¿¡¼­ µ¿ÀÛÇß´Ù¸é
-            //ApiDemos¸¦ Ã£¾Æ¼­ ÀÌÀü È­¸éÀ¸·Î µ¹¾Æ°¡°Ô µÈ´Ù. 
-            // FLAG_ACTIVITY_NEW_TASK°¡ ÀÖÀ¸¹Ç·Î ´Ù¸¥ ApiDemos task·Î ½ÇÇàÇÏ°í 
-            // xml¿¡¼­ StatusBarNotification.javaÀÌ launchMode="singleTop"·Î ¼³Á¤µÇ¾î 
-            // ÀÖÀ¸¹Ç·Î ±âÁ¸ top act¸¦ ÀçÈ°¿ëÇÏ°Ô µÈ´Ù.
+            //KJK_CHECK true or disable, activity ì‹¤í–‰ë°©ë²• 
+            //true: í˜„ì¬ activityê°€ contactì‹¤í–‰ì¤‘ì— notifcation pannelì—ì„œ ë™ì‘í–ˆë‹¤ë©´
+            //ApiDemosë¥¼ ì°¾ì•„ì„œ ì´ì „ í™”ë©´ìœ¼ë¡œ ëŒì•„ê°€ê²Œ ëœë‹¤. 
+            // FLAG_ACTIVITY_NEW_TASKê°€ ìˆìœ¼ë¯€ë¡œ ë‹¤ë¥¸ ApiDemos taskë¡œ ì‹¤í–‰í•˜ê³  
+            // xmlì—ì„œ StatusBarNotification.javaì´ launchMode="singleTop"ë¡œ ì„¤ì •ë˜ì–´ 
+            // ìˆìœ¼ë¯€ë¡œ ê¸°ì¡´ top actë¥¼ ì¬í™œìš©í•˜ê²Œ ëœë‹¤.
 
-            //false: ±×³É ÀÌÀüÈ­¸éÀ¸·Î µ¹¾Æ°¡´Ï ¸¸¾à, contactÀ» ½ÇÇàÁß¿¡
-            //notifcation pannel¿¡¼­ µ¿ÀÛ½ÃÅ²´Ù¸é ApiDemos·Î µ¹¾Æ°¡Áö ¾Ê°í, 
-            //±×³É contactÀÇ ÀÌÀüÈ­¸éÀ¸·Î µ¹¾Æ°¡°Ô µÈ´Ù. 
+            //false: ê·¸ëƒ¥ ì´ì „í™”ë©´ìœ¼ë¡œ ëŒì•„ê°€ë‹ˆ ë§Œì•½, contactì„ ì‹¤í–‰ì¤‘ì—
+            //notifcation pannelì—ì„œ ë™ì‘ì‹œí‚¨ë‹¤ë©´ ApiDemosë¡œ ëŒì•„ê°€ì§€ ì•Šê³ , 
+            //ê·¸ëƒ¥ contactì˜ ì´ì „í™”ë©´ìœ¼ë¡œ ëŒì•„ê°€ê²Œ ëœë‹¤. 
             Intent intent = new Intent(this, StatusBarNotifications.class);
             intent.setAction(Intent.ACTION_MAIN);
             intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);

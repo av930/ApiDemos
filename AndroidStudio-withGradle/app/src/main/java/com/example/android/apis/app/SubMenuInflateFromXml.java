@@ -1,6 +1,6 @@
 /*
  * KJK_TALK APIDEMOS: App-> Menu-> Sub Inflate from XML
- * ¾ÕÀÇ ¿¹Á¦¸¦ °£´ÜÇÏ°Ô µ¿ÀÛÀ» È®ÀÎÇÏ±â À§ÇØ¼­ ¸¸µç¿¹Á¦ 
+ * ì•ì˜ ì˜ˆì œë¥¼ ê°„ë‹¨í•˜ê²Œ ë™ì‘ì„ í™•ì¸í•˜ê¸° ìœ„í•´ì„œ ë§Œë“ ì˜ˆì œ 
  */
 
 package com.example.android.apis.app;
@@ -32,11 +32,11 @@ public class SubMenuInflateFromXml extends Activity {
         super.onCreate(savedInstanceState);
 
 
-        //KJK_TALK: xmlÀÌ ¾Æ´Ñ code·Î layoutÀ» ¼³Á¤ÇÑ´Ù.
+        //KJK_TALK: xmlì´ ì•„ë‹Œ codeë¡œ layoutì„ ì„¤ì •í•œë‹¤.
         // Create a simple layout
         
         LinearLayout layout = new LinearLayout(this);
-        //KJK_TALK: LinearLayoutÀ» ¼öÆò(¼öÁ÷ÀÌ °ğ ¼öÆò)À¸·Î ½×¾Æ¶ó. 
+        //KJK_TALK: LinearLayoutì„ ìˆ˜í‰(ìˆ˜ì§ì´ ê³§ ìˆ˜í‰)ìœ¼ë¡œ ìŒ“ì•„ë¼. 
         layout.setOrientation(LinearLayout.VERTICAL);
         
         setContentView(layout);
@@ -54,12 +54,12 @@ public class SubMenuInflateFromXml extends Activity {
         Menu menu;
         mMenu = menu;
         MenuInflater inflater = getMenuInflater();
-        //ÇØ´ç menu xmlÀ» ÀĞ¾î¿Í
+        //í•´ë‹¹ menu xmlì„ ì½ì–´ì™€
         inflater.inflate(R.menu.submenu, menu);
         */
     }
 
-    //KJK_TALK: menu key¸¦ ´­·¶À»¶§ ¾î¶² option menu¸¦ ¶ç¿ïÁö °áÁ¤ÇÑ´Ù 
+    //KJK_TALK: menu keyë¥¼ ëˆŒë €ì„ë•Œ ì–´ë–¤ option menuë¥¼ ë„ìš¸ì§€ ê²°ì •í•œë‹¤ 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
         // Hold on to this
@@ -68,7 +68,7 @@ public class SubMenuInflateFromXml extends Activity {
         
         // Inflate the currently selected menu XML resource.
         MenuInflater inflater = getMenuInflater();
-        //ÇØ´ç menu xmlÀ» ÀĞ¾î¿Í
+        //í•´ë‹¹ menu xmlì„ ì½ì–´ì™€
         inflater.inflate(R.menu.submenu, menu);
 
         mMenu.setGroupVisible(R.id.submenu, false);
@@ -81,9 +81,9 @@ public class SubMenuInflateFromXml extends Activity {
         super.closeOptionsMenu();
     }
 
-    //KJK_TALK: optionMenu¿¡¼­ Æ¯Á¤ menu¸¦ ¼±ÅÃÇßÀ»¶§ 
-    //submenu°¡ ÀÖ´Â°æ¿ì Platform¿¡¼­ ÀÚµ¿À¸·Î submenu¸¦ displayÇØÁÖ°í 
-    //±× submenuÁß itemÀ» ´Ù½Ã clickÇßÀ»°æ¿ì ´Ù½Ã onOptionsItemSelected°¡ È£ÃâµÈ´Ù.
+    //KJK_TALK: optionMenuì—ì„œ íŠ¹ì • menuë¥¼ ì„ íƒí–ˆì„ë•Œ 
+    //submenuê°€ ìˆëŠ”ê²½ìš° Platformì—ì„œ ìë™ìœ¼ë¡œ submenuë¥¼ displayí•´ì£¼ê³  
+    //ê·¸ submenuì¤‘ itemì„ ë‹¤ì‹œ clickí–ˆì„ê²½ìš° ë‹¤ì‹œ onOptionsItemSelectedê°€ í˜¸ì¶œëœë‹¤.
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         switch (item.getItemId()) {
@@ -91,7 +91,7 @@ public class SubMenuInflateFromXml extends Activity {
             // Generic catch all for all the other menu resources
             default:
                 // Don't toast text when a submenu is clicked
-                if (!item.hasSubMenu()) {//submenu¸¦ °¡ÁöÁö ¾ÊÀ¸¸é toast¸¦ ¶ç¿î´Ù 
+                if (!item.hasSubMenu()) {//submenuë¥¼ ê°€ì§€ì§€ ì•Šìœ¼ë©´ toastë¥¼ ë„ìš´ë‹¤ 
                     Toast.makeText(this, item.getTitle(), Toast.LENGTH_SHORT).show();
                     return true;
                 }

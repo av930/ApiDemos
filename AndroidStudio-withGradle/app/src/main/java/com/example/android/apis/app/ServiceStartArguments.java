@@ -1,17 +1,17 @@
 /*
  * KJK_TALK APIDEMOS: App-> Service-> Service Start Arguments Controller
- * ÀÌ ¿¹Àç´Â ÇÏ³ªÀÇ process¿¡ »õ·Î¿î thread·Î service¸¦ ±¸µ¿ÇÏ´Â ¹æ¹ıÀ¸·Î
-   START_REDELIVER_INTENT, START_NOT_STICKY, START_STICKYµîÀ¸·Î ÇØ´ç service°¡
-   kill½Ã ´Ù½Ã »ì¾Æ³¯Áö ¸»Áö¸¦ °áÁ¤ÇÏ´Â º¸¿©ÁÖ´Â ¿¹Á¦ÀÌ´Ù. 
-   CASE 1/2¹øÀº °°Àº ¿¹Á¦·Î 1/2¹øÀ» ½ÇÇàÈÄ kill process¸¦ ´­·¶À» °æ¿ì, »ì¾Æ³ªÁö ¾Ê´Â´Ù. 
-   CASE 3¹øÀº ½ÇÇàÈÄ kill process¸¦ ´­·¶À» °æ¿ì, »ì¾Æ³­´Ù.
+ * ì´ ì˜ˆì¬ëŠ” í•˜ë‚˜ì˜ processì— ìƒˆë¡œìš´ threadë¡œ serviceë¥¼ êµ¬ë™í•˜ëŠ” ë°©ë²•ìœ¼ë¡œ
+   START_REDELIVER_INTENT, START_NOT_STICKY, START_STICKYë“±ìœ¼ë¡œ í•´ë‹¹ serviceê°€
+   killì‹œ ë‹¤ì‹œ ì‚´ì•„ë‚ ì§€ ë§ì§€ë¥¼ ê²°ì •í•˜ëŠ” ë³´ì—¬ì£¼ëŠ” ì˜ˆì œì´ë‹¤. 
+   CASE 1/2ë²ˆì€ ê°™ì€ ì˜ˆì œë¡œ 1/2ë²ˆì„ ì‹¤í–‰í›„ kill processë¥¼ ëˆŒë €ì„ ê²½ìš°, ì‚´ì•„ë‚˜ì§€ ì•ŠëŠ”ë‹¤. 
+   CASE 3ë²ˆì€ ì‹¤í–‰í›„ kill processë¥¼ ëˆŒë €ì„ ê²½ìš°, ì‚´ì•„ë‚œë‹¤.
    
- * ÀÌ´Â kill process°æ¿ì¿¡´Â START_REDELIVER_INTENT, START_NOT_STICKY, START_STICKYÀÇ flag¿¡ ÀÇÇØ¼­
-   Activity Manager°¡ ´Ù½Ã »ì¸®°Ô µÇ±â ¶§¹®ÀÌ´Ù.
+ * ì´ëŠ” kill processê²½ìš°ì—ëŠ” START_REDELIVER_INTENT, START_NOT_STICKY, START_STICKYì˜ flagì— ì˜í•´ì„œ
+   Activity Managerê°€ ë‹¤ì‹œ ì‚´ë¦¬ê²Œ ë˜ê¸° ë•Œë¬¸ì´ë‹¤.
  * 
- * ¾Æ·¡ 2 ¹öÆ°Àº Á×ÀÌ´Â ¹æ¹ıÀ¸·Î 
-   start failed delivery°æ¿ì¿¡´Â onStart¿¡¼­ Á×´Â °æ¿ì¸¦ simulationÇØÁÖ´Âµ¥, ÀÌ¶§´Â  flag¿¡ »ó°ü¾øÀÌ ¹«Á¶°Ç  ´Ù½Ã »ì¾Æ³­´Ù. 
-   kill buttonÀº ddms¿¡¼­ kill process¿Í µ¿ÀÏÇÑ °ÍÀ¸·Î service Flag°ª¿¡ µû¶ó ´Ù¸£°Ô »ì¾Æ³ª°Å³ª »ì¾Æ³ªÁö ¾Ê°Ô µÈ´Ù.      
+ * ì•„ë˜ 2 ë²„íŠ¼ì€ ì£½ì´ëŠ” ë°©ë²•ìœ¼ë¡œ 
+   start failed deliveryê²½ìš°ì—ëŠ” onStartì—ì„œ ì£½ëŠ” ê²½ìš°ë¥¼ simulationí•´ì£¼ëŠ”ë°, ì´ë•ŒëŠ”  flagì— ìƒê´€ì—†ì´ ë¬´ì¡°ê±´  ë‹¤ì‹œ ì‚´ì•„ë‚œë‹¤. 
+   kill buttonì€ ddmsì—ì„œ kill processì™€ ë™ì¼í•œ ê²ƒìœ¼ë¡œ service Flagê°’ì— ë”°ë¼ ë‹¤ë¥´ê²Œ ì‚´ì•„ë‚˜ê±°ë‚˜ ì‚´ì•„ë‚˜ì§€ ì•Šê²Œ ëœë‹¤.      
 
  * Copyright (C) 2007 The Android Open Source Project
  *
@@ -64,7 +64,7 @@ import com.example.android.apis.R;
  * <p>For applications targeting Android 1.5 or beyond, you may want consider
  * using the {@link android.app.IntentService} class, which takes care of all the
  * work of creating the extra thread and dispatching commands to it.
- *///KJK_TALK: Service Class°¡ Activity¸¦ °¨½Î°í ÀÖ´Â ±¸Á¶. 
+ *///KJK_TALK: Service Classê°€ Activityë¥¼ ê°ì‹¸ê³  ìˆëŠ” êµ¬ì¡°. 
 public class ServiceStartArguments extends Service {
     private NotificationManager mNM;
     private Intent mInvokeIntent;
@@ -73,7 +73,7 @@ public class ServiceStartArguments extends Service {
     
     private final class ServiceHandler extends Handler {
         public ServiceHandler(Looper looper) {
-            super(looper);//KJK_TALK: handler¸¦ »ı¼ºÇÏ°í ¾î¶² looper¸¦ »ç¿ëÇÏ´ÂÁö ¾Ë·ÁÁØ´Ù.
+            super(looper);//KJK_TALK: handlerë¥¼ ìƒì„±í•˜ê³  ì–´ë–¤ looperë¥¼ ì‚¬ìš©í•˜ëŠ”ì§€ ì•Œë ¤ì¤€ë‹¤.
         }
         
         @Override
@@ -85,10 +85,10 @@ public class ServiceStartArguments extends Service {
             Log.i("ServiceStartArguments", "Message: " + msg + ", "
                     + arguments.getString("name"));
 
-            //KJK_TALK 1/2nd ¸í·É: ±×³É txt¸¸À» »Ñ¸°´Ù.
+            //KJK_TALK 1/2nd ëª…ë ¹: ê·¸ëƒ¥ txtë§Œì„ ë¿Œë¦°ë‹¤.
             if ((msg.arg2&Service.START_FLAG_REDELIVERY) == 0) {
                 txt = "New cmd #" + msg.arg1 + ": " + txt;
-            } else {//START_FLAG_REDELIVERY´Â START_REDELIVER_INTENT, START_STICKYÀÎ °æ¿ì
+            } else {//START_FLAG_REDELIVERYëŠ” START_REDELIVER_INTENT, START_STICKYì¸ ê²½ìš°
                 txt = "Re-delivered #" + msg.arg1 + ": " + txt;
             }
             
@@ -109,7 +109,7 @@ public class ServiceStartArguments extends Service {
             hideNotification();
             
             Log.i("ServiceStartArguments", "Done with #" + msg.arg1);
-            stopSelf(msg.arg1);//½º½º·Î¸¦ ¸ØÃá´Ù.
+            stopSelf(msg.arg1);//ìŠ¤ìŠ¤ë¡œë¥¼ ë©ˆì¶˜ë‹¤.
         }
 
     };
@@ -129,37 +129,37 @@ public class ServiceStartArguments extends Service {
         // separate thread because the service normally runs in the process's
         // main thread, which we don't want to block.  We also make it
         // background priority so CPU-intensive work will not disrupt our UI.
-		//KJK_TALK: looper¸¦ °¡Áø thread¸¦ »ı¼ºÇÑ´Ù.
+		//KJK_TALK: looperë¥¼ ê°€ì§„ threadë¥¼ ìƒì„±í•œë‹¤.
         HandlerThread thread = new HandlerThread("ServiceStartArguments",
                 Process.THREAD_PRIORITY_BACKGROUND);
-        thread.start();//threadÀÇ runÇÔ¼ö°¡ È£ÃâµÈ´Ù. entry point
+        thread.start();//threadì˜ runí•¨ìˆ˜ê°€ í˜¸ì¶œëœë‹¤. entry point
         
         mServiceLooper = thread.getLooper();
         mServiceHandler = new ServiceHandler(mServiceLooper);
     }
 
-    /* KJK_TALK: startService ·Î service¸¦ ½ÃÀÛÇÒ¶§ µé¾î¿À´Â intent¿¡¼­ parameter¸¦ ±¸º°ÇÏ±â À§ÇØ
-      onStartCommand°¡ Ç×»ó ÇÑ¹ø ½ÇÇàµÇ°Ô µÈ´Ù. 
-      intent : service ½ÃÀÛ½Ã Àü´ŞµÈ intents
-      flags : service¸¦ Àç½ÃÀÛÇÒÁö ¸»Áö °áÁ¤ÇÏ´Â flag·Î¼­ START_REDELIVER_INTENT, START_NOT_STICKY, START_STICKY
+    /* KJK_TALK: startService ë¡œ serviceë¥¼ ì‹œì‘í• ë•Œ ë“¤ì–´ì˜¤ëŠ” intentì—ì„œ parameterë¥¼ êµ¬ë³„í•˜ê¸° ìœ„í•´
+      onStartCommandê°€ í•­ìƒ í•œë²ˆ ì‹¤í–‰ë˜ê²Œ ëœë‹¤. 
+      intent : service ì‹œì‘ì‹œ ì „ë‹¬ëœ intents
+      flags : serviceë¥¼ ì¬ì‹œì‘í• ì§€ ë§ì§€ ê²°ì •í•˜ëŠ” flagë¡œì„œ START_REDELIVER_INTENT, START_NOT_STICKY, START_STICKY
       startId : 
     */
     @Override
     public int onStartCommand(Intent intent, int flags, int startId) {
         Log.i("ServiceStartArguments",
                 "Starting #" + startId + ": " + intent.getExtras());
-        //KJK_TALK: free pool¿¡¼­ msg¸¦ ÇÏ³ª °¡Á®¿Í ¼³Á¤ÇÏ°í
+        //KJK_TALK: free poolì—ì„œ msgë¥¼ í•˜ë‚˜ ê°€ì ¸ì™€ ì„¤ì •í•˜ê³ 
         Message msg = mServiceHandler.obtainMessage(); 
         msg.arg1 = startId;
         msg.arg2 = flags;
-        msg.obj = intent.getExtras();//intent·Î ³Ñ¾î¿Â arguement¸¦ ÀĞ¾î¿Í¼­ 
-        mServiceHandler.sendMessage(msg); //msg queue¿¡ ³Ö¾îÁØ´Ù.
+        msg.obj = intent.getExtras();//intentë¡œ ë„˜ì–´ì˜¨ arguementë¥¼ ì½ì–´ì™€ì„œ 
+        mServiceHandler.sendMessage(msg); //msg queueì— ë„£ì–´ì¤€ë‹¤.
         Log.i("ServiceStartArguments", "Sending: " + msg);
         
         // For the start fail button, we will simulate the process dying
         // for some reason in onStartCommand().
 
-        //±×·¯¸é µÇ»ì¾Æ ³ªÁö ¾Ê´Â´Ù. 
+        //ê·¸ëŸ¬ë©´ ë˜ì‚´ì•„ ë‚˜ì§€ ì•ŠëŠ”ë‹¤. 
         if (intent.getBooleanExtra("fail", false)) {
             // Don't do this if we are in a retry... the system will
             // eventually give up if we keep crashing.
@@ -175,8 +175,8 @@ public class ServiceStartArguments extends Service {
         // however, here we will select between these two, so you can see
         // how they impact the behavior.  Try killing the process while it
         // is in the middle of executing the different commands.
-        // KJK_TALK: 1/2¹ø °æ¿ì¿¡´Â START_NOT_STICKY µÇ»ì¸®Áö ¾Ê´Â´Ù, 3¹ø °æ¿ì´Â START_REDELIVER_INTENTÀ¸·Î µÇ»ì¸°´Ù.
-        // getBooleanExtra ÇÔ¼ö´Â ±âÁ¸°ªÀÌ ÀÖÀ¸¸é ±×°ªÀ» ¾øÀ¸¸é default(¿©±â¼­´Â false) °ªÀ» ¸®ÅÏ 
+        // KJK_TALK: 1/2ë²ˆ ê²½ìš°ì—ëŠ” START_NOT_STICKY ë˜ì‚´ë¦¬ì§€ ì•ŠëŠ”ë‹¤, 3ë²ˆ ê²½ìš°ëŠ” START_REDELIVER_INTENTìœ¼ë¡œ ë˜ì‚´ë¦°ë‹¤.
+        // getBooleanExtra í•¨ìˆ˜ëŠ” ê¸°ì¡´ê°’ì´ ìˆìœ¼ë©´ ê·¸ê°’ì„ ì—†ìœ¼ë©´ default(ì—¬ê¸°ì„œëŠ” false) ê°’ì„ ë¦¬í„´ 
         return intent.getBooleanExtra("redeliver", false)
                 ? START_REDELIVER_INTENT : START_NOT_STICKY;
     }
@@ -292,7 +292,7 @@ public class ServiceStartArguments extends Service {
             public void onClick(View v) {
                 // This is to simulate the service being killed while it is
                 // running in the background.
-                //KJK_TALK: ÇöÀç process¸¦ Á×ÀÌ³ª, ApiDemos ½ÇÇà½Ã Àç½ÇÇàÇÏµµ·Ï µî·ÏµÇ¾î ÀÖ¾î ´Ù½Ã ½ÇÇàµÊ
+                //KJK_TALK: í˜„ì¬ processë¥¼ ì£½ì´ë‚˜, ApiDemos ì‹¤í–‰ì‹œ ì¬ì‹¤í–‰í•˜ë„ë¡ ë“±ë¡ë˜ì–´ ìˆì–´ ë‹¤ì‹œ ì‹¤í–‰ë¨
                 Process.killProcess(Process.myPid()); 
             }
         };

@@ -10,7 +10,7 @@ import android.util.Log;
 
 /**
  * KJK_TALK APIDEMOS: App-> Activity-> MyTest
- * Activity¸¦ »ó¼ÓÇØ¼­ Activity¸¦ ¸¸µç °æ¿ì·Î ºÎ¸ğ¸¦ ±×´ë·Î È£ÃâÇÑ´Ù.
+ * Activityë¥¼ ìƒì†í•´ì„œ Activityë¥¼ ë§Œë“  ê²½ìš°ë¡œ ë¶€ëª¨ë¥¼ ê·¸ëŒ€ë¡œ í˜¸ì¶œí•œë‹¤.
  *
  */
 @com.example.android.apis.ActivityIsReviewed(sequence=1.1) 

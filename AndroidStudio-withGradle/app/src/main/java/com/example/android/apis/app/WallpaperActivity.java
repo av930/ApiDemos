@@ -1,7 +1,7 @@
 /*
  KJK_TALK APIDEMOS: App-> Activity-> WallpaperActivity
- * AndroidManifest.xmlÆÄÀÏ¿¡¼­ @style/Theme.Wallpaper¼Ó¼ºÀ» ÅëÇØ default·Î 
- * ¼³Á¤µÈ Foreground°¡ ¹İÅõ¸íÇÏ°Ô µÇ¾î WallpaperBackground°¡ º¸ÀÎ´Ù.
+ * AndroidManifest.xmlíŒŒì¼ì—ì„œ @style/Theme.Wallpaperì†ì„±ì„ í†µí•´ defaultë¡œ 
+ * ì„¤ì •ëœ Foregroundê°€ ë°˜íˆ¬ëª…í•˜ê²Œ ë˜ì–´ WallpaperBackgroundê°€ ë³´ì¸ë‹¤.
 
 
  * Copyright (C) 2007 The Android Open Source Project

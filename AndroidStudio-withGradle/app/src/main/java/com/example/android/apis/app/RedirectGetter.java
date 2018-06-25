@@ -1,7 +1,7 @@
 /*
  * KJK_TALK APIDEMOS: App-> Activity-> Redirection ->RedirectMain-->RedirectGetter.java
- * ´Ü¼øÈ÷ ¹®ÀÚ¿­À» ÀÔ·Â¹Ş¾Æ content providerÁß¿¡ preference type¿¡ ÀúÀåÇÏ°í
- * RESULT_OK¸¦ ¹İÈ¯ÇØÁØ´Ù.
+ * ë‹¨ìˆœíˆ ë¬¸ìì—´ì„ ì…ë ¥ë°›ì•„ content providerì¤‘ì— preference typeì— ì €ì¥í•˜ê³ 
+ * RESULT_OKë¥¼ ë°˜í™˜í•´ì¤€ë‹¤.
 
 
  * Copyright (C) 2007 The Android Open Source Project
@@ -77,15 +77,15 @@ public class RedirectGetter extends Activity
     private OnClickListener mApplyListener = new OnClickListener()
     {
         public void onClick(View v)
-        {	//KJK_TALK: content providerÁß¿¡ preference typeÀ» redirect, private mode·Î »ı¼ºÇÑ´Ù.
+        {	//KJK_TALK: content providerì¤‘ì— preference typeì„ redirect, private modeë¡œ ìƒì„±í•œë‹¤.
             SharedPreferences preferences = getSharedPreferences("RedirectData", 0);
-            SharedPreferences.Editor editor = preferences.edit();//DB¿Í ¹Ù·Î ¿¬µ¿µÇ´Â editor interface¸¦ ¸¸µç´Ù.
+            SharedPreferences.Editor editor = preferences.edit();//DBì™€ ë°”ë¡œ ì—°ë™ë˜ëŠ” editor interfaceë¥¼ ë§Œë“ ë‹¤.
             editor.putString("text", mText.getText().toString());
 
-            if (editor.commit()) { //DB¿¡ ÀúÀåÇÑ´Ù.
+            if (editor.commit()) { //DBì— ì €ì¥í•œë‹¤.
                 setResult(RESULT_OK);
             }
-			// act stack¿¡¼­ Á¦°Å ÇÑ´Ù.
+			// act stackì—ì„œ ì œê±° í•œë‹¤.
             finish();
         }
     };

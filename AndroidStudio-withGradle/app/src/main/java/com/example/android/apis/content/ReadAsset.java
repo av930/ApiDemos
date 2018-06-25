@@ -1,7 +1,7 @@
 /*
  * KJK_TALK APIDEMOS: App-> Content->Assets->Read Asset
- * ÀÏ¹İ fileÀ» ÀĞ´Â ¹æ¹ıÀ» º¸¿©ÁØ´Ù. ·Îµù½Ã´Â ASCIIÆÄÀÏÀ¸¹Ç·Î 
- * UNI-code, UTF-16Çü½ÄÀ¸·Î º¯°æÇÏ¿© »ç¿ëÇÑ´Ù.
+ * ì¼ë°˜ fileì„ ì½ëŠ” ë°©ë²•ì„ ë³´ì—¬ì¤€ë‹¤. ë¡œë”©ì‹œëŠ” ASCIIíŒŒì¼ìœ¼ë¯€ë¡œ 
+ * UNI-code, UTF-16í˜•ì‹ìœ¼ë¡œ ë³€ê²½í•˜ì—¬ ì‚¬ìš©í•œë‹¤.
 
 
  * Copyright (C) 2007 The Android Open Source Project
@@ -45,15 +45,15 @@ public class ReadAsset extends Activity
 
         // See assets/res/any/layout/styled_text.xml for this
         // view layout definition.
-        setContentView(R.layout.read_asset); //ºó È­¸éÀ» ÀĞ´Â´Ù.
+        setContentView(R.layout.read_asset); //ë¹ˆ í™”ë©´ì„ ì½ëŠ”ë‹¤.
 
         // Programmatically load text from an asset and place it into the
         // text view.  Note that the text we are loading is ASCII, so we
         // need to convert it to UTF-16.
         try {
-            InputStream is = getAssets().open("read_asset.txt"); //KJK_TALK: ascii file, µæ txtÆÄÀÏÀ» ÀĞ´Â´Ù.
-            //KJK_TALK: ÀÌÁ¦ input streamÀ¸·Î ÀĞ¾îµé¿´À¸¹Ç·Î 1byte°¡ 2byte°¡ µÇ¾ú´Ù.
-            //Áï ±âÁ¸ fileÀÌ 2GB¶ó¸é 4GB°¡ µÈ´Ù. 
+            InputStream is = getAssets().open("read_asset.txt"); //KJK_TALK: ascii file, ë“ txtíŒŒì¼ì„ ì½ëŠ”ë‹¤.
+            //KJK_TALK: ì´ì œ input streamìœ¼ë¡œ ì½ì–´ë“¤ì˜€ìœ¼ë¯€ë¡œ 1byteê°€ 2byteê°€ ë˜ì—ˆë‹¤.
+            //ì¦‰ ê¸°ì¡´ fileì´ 2GBë¼ë©´ 4GBê°€ ëœë‹¤. 
             // We guarantee that the available method returns the total
             // size of the asset...  of course, this does mean that a single
             // asset can't be more than 2 gigs.
@@ -64,12 +64,12 @@ public class ReadAsset extends Activity
             is.read(buffer);
             is.close();
             
-            // Convert the buffer into a string. //KJK_TALK: StringÀÇ »ı¼ºÀÚ·Î txt.file txtÀ» StringÀ¸·Î ¸¸µç´Ù.
+            // Convert the buffer into a string. //KJK_TALK: Stringì˜ ìƒì„±ìë¡œ txt.file txtì„ Stringìœ¼ë¡œ ë§Œë“ ë‹¤.
             String text = new String(buffer);
             
             // Finally stick the string into the text view.
             TextView tv = (TextView)findViewById(R.id.text);
-            tv.setText(text); //¸¸µç text Ãâ·Â
+            tv.setText(text); //ë§Œë“  text ì¶œë ¥
         } catch (IOException e) {
             // Should never happen!
             throw new RuntimeException(e);

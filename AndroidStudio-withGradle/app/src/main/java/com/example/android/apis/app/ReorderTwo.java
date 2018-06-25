@@ -1,7 +1,7 @@
 /*
 
  * KJK_TALK APIDEMOS: App-> Activity->Reorder Activities-->ReorderTwo.java
-   act ReorderThree¸¦ È£ÃâÇÑ´Ù.
+   act ReorderThreeë¥¼ í˜¸ì¶œí•œë‹¤.
 
  * Copyright (C) 2009 The Android Open Source Project
  *

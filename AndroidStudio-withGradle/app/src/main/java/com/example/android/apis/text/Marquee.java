@@ -1,11 +1,11 @@
 /* 
  * KJK_TALK APIDEMOS: Text-> Marquee
  *
- * ÇØ´ç button¿¡ key¸¦ ÀÌ¿ëÇÏ¿© "focus"¸¦ ÁÖ¸é buttonº¸´Ù ±ä text°¡
- * ÀÚµ¿ÀûÀ¸·Î scrollingµÈ´Ù. ÀÌ È½¼ö¸¦ testÇÏ´Â exampleÀÌ´Ù.
- * layout xml ÆÄÀÏÀÇ button ¼Ó¼º¿¡ marquee¸¦ ÁÖ¸é default·Î 3¹ø 
- * Ãß°¡ÀûÀ¸·Î android:marqueeRepeatLimit¿¡ È½¼ö¸¦ °­Á¦·Î ÀÔ·Â°¡´ÉÇÏ¸ç
- * marquee_forever¸¦ ÁÖ¸é ¹«ÇÑ ¹İº¹ÇÑ´Ù.
+ * í•´ë‹¹ buttonì— keyë¥¼ ì´ìš©í•˜ì—¬ "focus"ë¥¼ ì£¼ë©´ buttonë³´ë‹¤ ê¸´ textê°€
+ * ìë™ì ìœ¼ë¡œ scrollingëœë‹¤. ì´ íšŸìˆ˜ë¥¼ testí•˜ëŠ” exampleì´ë‹¤.
+ * layout xml íŒŒì¼ì˜ button ì†ì„±ì— marqueeë¥¼ ì£¼ë©´ defaultë¡œ 3ë²ˆ 
+ * ì¶”ê°€ì ìœ¼ë¡œ android:marqueeRepeatLimitì— íšŸìˆ˜ë¥¼ ê°•ì œë¡œ ì…ë ¥ê°€ëŠ¥í•˜ë©°
+ * marquee_foreverë¥¼ ì£¼ë©´ ë¬´í•œ ë°˜ë³µí•œë‹¤.
 
 
  * Copyright (C) 2007 Google Inc.

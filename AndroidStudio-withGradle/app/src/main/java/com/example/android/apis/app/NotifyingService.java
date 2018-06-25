@@ -1,7 +1,7 @@
 /*
  * KJK_TALK APIDEMOS: App-> Notification-> Notifying Service Controller-> Notifying Service
- * service¿¡¼­ thread¸¦ ¸¸µé¾î NotificationÀ» ¹Ù²Ù´Â ¿¹Á¦ ÀÎµ¥, ÁÖ±âÀûÀ¸·Î notification display¸¦ 
- * È£ÃâÇØ ÁÖ±â¸¸ ÇÑ´Ù. notification panel¿¡ ¹Ù²î´Â image´Â notification manager°¡ ÀÚµ¿À¸·Î Ã³¸®ÇØÁØ´Ù.
+ * serviceì—ì„œ threadë¥¼ ë§Œë“¤ì–´ Notificationì„ ë°”ê¾¸ëŠ” ì˜ˆì œ ì¸ë°, ì£¼ê¸°ì ìœ¼ë¡œ notification displayë¥¼ 
+ * í˜¸ì¶œí•´ ì£¼ê¸°ë§Œ í•œë‹¤. notification panelì— ë°”ë€ŒëŠ” imageëŠ” notification managerê°€ ìë™ìœ¼ë¡œ ì²˜ë¦¬í•´ì¤€ë‹¤.
 
 
  * Copyright (C) 2007 The Android Open Source Project
@@ -56,9 +56,9 @@ public class NotifyingService extends Service {
         // Start up the thread running the service.  Note that we create a
         // separate thread because the service normally runs in the process's
         // main thread, which we don't want to block.
-        //KJK_TALK: main thread¿¡¼­ ui¶û °°ÀÌ µ¹¸®¸é blockµÇ¹Ç·Î µû·Î thread¸¦ ¸¸µç´Ù 
+        //KJK_TALK: main threadì—ì„œ uië‘ ê°™ì´ ëŒë¦¬ë©´ blockë˜ë¯€ë¡œ ë”°ë¡œ threadë¥¼ ë§Œë“ ë‹¤ 
         Thread notifyingThread = new Thread(null, mTask, "NotifyingService");
-        //¿©·¯ thread¿¡¼­ access°¡´ÉÇÑ condition value¸¦ default °ª false(lock)·Î ¸¸µç´Ù.
+        //ì—¬ëŸ¬ threadì—ì„œ accessê°€ëŠ¥í•œ condition valueë¥¼ default ê°’ false(lock)ë¡œ ë§Œë“ ë‹¤.
         mCondition = new ConditionVariable(false);
         notifyingThread.start();
     }
@@ -67,7 +67,7 @@ public class NotifyingService extends Service {
     public void onDestroy() {
         // Cancel the persistent notification.
         mNM.cancel(MOOD_NOTIFICATIONS);
-        // Stop the thread from generating further notifications, lockÇØÁ¦
+        // Stop the thread from generating further notifications, lockí•´ì œ
         mCondition.open();
     }
 
@@ -76,7 +76,7 @@ public class NotifyingService extends Service {
             for (int i = 0; i < 4; ++i) {
                 showNotification(R.drawable.stat_happy,
                         R.string.status_bar_notifications_happy_message);
-                //500msµ¿¾È lock,ÀÌÈÄ¿¡´Â ÀÚµ¿ÀûÀ¸·Î unlock
+                //500msë™ì•ˆ lock,ì´í›„ì—ëŠ” ìë™ì ìœ¼ë¡œ unlock
                 if (mCondition.block(1 * 500)) 
                     break;
                 showNotification(R.drawable.stat_neutral,
@@ -90,7 +90,7 @@ public class NotifyingService extends Service {
                 if (mCondition.block(1 * 500)) 
                     break;
             }
-            // Done with our work...  stop the service! ½º½º¸¦ ¸ØÃá´Ù.
+            // Done with our work...  stop the service! ìŠ¤ìŠ¤ë¥¼ ë©ˆì¶˜ë‹¤.
             NotifyingService.this.stopSelf();
         }
     };

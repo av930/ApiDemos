@@ -1,6 +1,6 @@
 /*
  * KJK_TALK APIDEMOS: App-> Activity-> Set Wallpaper->SetWallpaperActivity.java
- * Wallpaper ÇöÀç Wallpaper¸¦ ¾ò¾î¿Í color¸¦ º¯°æÇÏ°í, ´Ù½Ã wallpaper·Î ¼³Á¤ÇÏ´Â demo
+ * Wallpaper í˜„ì¬ Wallpaperë¥¼ ì–»ì–´ì™€ colorë¥¼ ë³€ê²½í•˜ê³ , ë‹¤ì‹œ wallpaperë¡œ ì„¤ì •í•˜ëŠ” demo
 
 
  * Copyright (C) 2009 The Android Open Source Project
@@ -63,12 +63,12 @@ public class SetWallpaperActivity extends Activity {
         // view layout definition, which is being set here as
         // the content of our screen.
         setContentView(R.layout.wallpaper_2);
-        // Wallpaper Manager¸¦ È¹µæÇÑÈÄ
+        // Wallpaper Managerë¥¼ íšë“í•œí›„
         final WallpaperManager wallpaperManager = WallpaperManager.getInstance(this);
-        // ÇöÀç Wallpaper¸¦ ¾ò¾î¿Â´Ù.
+        // í˜„ì¬ Wallpaperë¥¼ ì–»ì–´ì˜¨ë‹¤.
         final Drawable wallpaperDrawable = wallpaperManager.getDrawable();
         final ImageView imageView = (ImageView) findViewById(R.id.imageview);
-        // ÇöÀç imageView°¡ cache·Î µé¾î°¡¼­ ºü¸£°Ô µÊ.
+        // í˜„ì¬ imageViewê°€ cacheë¡œ ë“¤ì–´ê°€ì„œ ë¹ ë¥´ê²Œ ë¨.
         imageView.setDrawingCacheEnabled(true);
         imageView.setImageDrawable(wallpaperDrawable);
 
@@ -76,8 +76,8 @@ public class SetWallpaperActivity extends Activity {
         randomize.setOnClickListener(new OnClickListener() {
             public void onClick(View view) {
                 int mColor = (int) Math.floor(Math.random() * mColors.length);
-                wallpaperDrawable.setColorFilter(mColors[mColor], PorterDuff.Mode.MULTIPLY); // ÇöÀç image¿¡ color¸¦ Àû¿ëÇÏ°í
-                imageView.setImageDrawable(wallpaperDrawable); //color filter°¡ Àû¿ëµÈ image¸¦ imageview¿¡  Àç¼³Á¤
+                wallpaperDrawable.setColorFilter(mColors[mColor], PorterDuff.Mode.MULTIPLY); // í˜„ì¬ imageì— colorë¥¼ ì ìš©í•˜ê³ 
+                imageView.setImageDrawable(wallpaperDrawable); //color filterê°€ ì ìš©ëœ imageë¥¼ imageviewì—  ì¬ì„¤ì •
                 imageView.invalidate();
             }
         });
@@ -86,7 +86,7 @@ public class SetWallpaperActivity extends Activity {
         setWallpaper.setOnClickListener(new OnClickListener() {
             public void onClick(View view) {
                 try {
-                    //cache·Î ºÎÅÍ image¸¦ °¡Á®¿Í Wallpaper¸¦ ½ÇÁ¦·Î º¯°æ, 
+                    //cacheë¡œ ë¶€í„° imageë¥¼ ê°€ì ¸ì™€ Wallpaperë¥¼ ì‹¤ì œë¡œ ë³€ê²½, 
                     wallpaperManager.setBitmap(imageView.getDrawingCache());
                     finish();
                 } catch (IOException e) {

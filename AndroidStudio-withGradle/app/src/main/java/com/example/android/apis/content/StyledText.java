@@ -1,8 +1,8 @@
 /*
  * KJK_TALK APIDEMOS: App-> Content-> Resources-> Styled Text
-   stringÀÇ ¼Ó¼ºÀ» html tag·Î ±â·ÏÇØ ³í°É ÀĞ¾î¿Í º¸¿©ÁÖ´Â ¿¹Á¦·Î
-   1)±×³É layout xml·Î ÇØ´ç string°ªÀ» ÀĞ¾î¿À´Â ¹æ¹ı°ú
-   2)ÄÚµå·Î textView¿¡ ÇØ´ç string°ªÀ» ÀĞ¾î¿À´Â ¹æ¹ıÀ» º¸¿©ÁØ´Ù. µÑ´Ù °á°ú´Â °°´Ù.
+   stringì˜ ì†ì„±ì„ html tagë¡œ ê¸°ë¡í•´ ë…¼ê±¸ ì½ì–´ì™€ ë³´ì—¬ì£¼ëŠ” ì˜ˆì œë¡œ
+   1)ê·¸ëƒ¥ layout xmlë¡œ í•´ë‹¹ stringê°’ì„ ì½ì–´ì˜¤ëŠ” ë°©ë²•ê³¼
+   2)ì½”ë“œë¡œ textViewì— í•´ë‹¹ stringê°’ì„ ì½ì–´ì˜¤ëŠ” ë°©ë²•ì„ ë³´ì—¬ì¤€ë‹¤. ë‘˜ë‹¤ ê²°ê³¼ëŠ” ê°™ë‹¤.
 
 
  * Copyright (C) 2007 The Android Open Source Project
@@ -49,15 +49,15 @@ public class StyledText extends Activity
         <string name="styled_text">Plain, <b>bold</b>, <i>italic</i>, <b><i>bold-italic</i></b></string>
         <string name="styled_text_prog">Assigned programmatically:</string>
         */
-        //KJK_TALK: stringÀÇ ¼Ó¼ºÀ» html tag·Î ±â·ÏÇØ ³í°É xml inflate·Î ±×´ë·Î º¸¿©ÁØ´Ù.
+        //KJK_TALK: stringì˜ ì†ì„±ì„ html tagë¡œ ê¸°ë¡í•´ ë…¼ê±¸ xml inflateë¡œ ê·¸ëŒ€ë¡œ ë³´ì—¬ì¤€ë‹¤.
         setContentView(R.layout.styled_text);
 
         // Programmatically retrieve a string resource with style
         // information and apply it to the second text view.  Note the
         // use of CharSequence instead of String so we don't lose
         // the style info.
-        //KJK_TALK: stringÀÇ ¼Ó¼ºÀ» html tag·Î ±â·ÏÇØ ³í°É code¿¡¼­ ºÒ·¯¿Í º¸¿©ÁØ´Ù.
-        //Âü°í·Î string ÀÚÃ¼ ¼Ó¼º(italic,etc)À» code·Î µ¿ÀûÀ¸·Î handlingÇÏ´Â ¿¹Á¦´Â ¿©±â¿¡ ¾ø´Ù.
+        //KJK_TALK: stringì˜ ì†ì„±ì„ html tagë¡œ ê¸°ë¡í•´ ë…¼ê±¸ codeì—ì„œ ë¶ˆëŸ¬ì™€ ë³´ì—¬ì¤€ë‹¤.
+        //ì°¸ê³ ë¡œ string ìì²´ ì†ì„±(italic,etc)ì„ codeë¡œ ë™ì ìœ¼ë¡œ handlingí•˜ëŠ” ì˜ˆì œëŠ” ì—¬ê¸°ì— ì—†ë‹¤.
         CharSequence str = getText(R.string.styled_text);
         TextView tv = (TextView)findViewById(R.id.text);
         tv.setText(str);

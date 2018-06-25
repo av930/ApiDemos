@@ -1,20 +1,20 @@
 /*
  * KJK_TALK APIDEMOS: App-> Activity-> Save & Restore State
- * °©ÀÚ±â ¸Ş·Î¸® ºÎÁ·µîÀ¸·Î background app°¡ Á¾·áµÉ´ë, ±× ¸¶Áö¸· »óÅÂ¸¦ ÀúÀåÇØ‡J´Ù 
- * º¹±¸ÇÏ´Â ¿¹Á¦
- * onPause½Ã performPauseActivity¿¡¼­ savedInstanceStateÀ¸·Î ÇöÀç »óÅÂ¸¦ ÀúÀåÇØ‡J´Ù°¡, onResume½Ã 
- * mInstrumentation.callActivityOnSaveInstanceState¿¡ ÀÇÇØ onSaveInstanceState°¡ È£ÃâµÇ¾î
- * savedInstanceState¸¦ ÀúÀåÇÏ°Ô µÈ´Ù. 
- * ±×·¯¸é °­Á¦·Î system¿¡ ÀÇÇØ Á¾·áµÇ¾îµµ Â÷ÈÄ Àç½ÇÇà½Ã º¹±ÍµÈ´Ù.
- * ÀçÇö¹æ¹ı
- * 1.ApiDemos Save & Restore ½ÇÇà, 2.HOMEÅ°·Î HOMEÀ¸·Î ÀÌµ¿, 3.´Ù¸¥ app½ÇÇà message°°Àº°É·Î
- * 4. DDMS·Î ApiDemos °­Á¦·Î kill, 5.´Ù½Ã HOMEÀ» ´­·¯ HOMEÀ¸·Î ÀÌµ¿, 
- * 6. HOME longkey¸¦ ´­·¯ ÀÌÀü ½ÇÇà appÁß ApiDemo¸¦ ¼±ÅÃ
- * Âü°í, ¸¸¾à 4¹ø ´Ü°è¿¡¼­ Menu¸¦ ÅëÇØ ½ÇÇàÇÏ¸é ApiDemos processÀ§¿¡ »õ·Î¿î Save & Restore°¡ 
- * »ı¼ºµÇ¹Ç·Î ÀçÇöµÇÁö ¾Ê´Â´Ù.
- * Âü°í·Î ÀÌ·¸°Ô °­Á¦Á¾·á¿¡ ÀÇÇØ save & RestoreµÇ´Â widgetÀº ID¸¦ °¡Áø widget´ë»óÀ¸·Î ½Ç½ÃÇÑ´Ù.
- * ID°¡ ³ÖÁö ¾ÊÀ¸¸é save & restore ¾ÈµÊ 
- * ÀÌ°æ¿ì Ã¹¹øÂ° µÎ¹øÂ° edit text ¸ğµÎ ID°¡ ÀÖ¹ÇÀ¸·Î º¹±¸µÈ´Ù 
+ * ê°‘ìê¸° ë©”ë¡œë¦¬ ë¶€ì¡±ë“±ìœ¼ë¡œ background appê°€ ì¢…ë£Œë ëŒ€, ê·¸ ë§ˆì§€ë§‰ ìƒíƒœë¥¼ ì €ì¥í•´Â‡Jë‹¤ 
+ * ë³µêµ¬í•˜ëŠ” ì˜ˆì œ
+ * onPauseì‹œ performPauseActivityì—ì„œ savedInstanceStateìœ¼ë¡œ í˜„ì¬ ìƒíƒœë¥¼ ì €ì¥í•´Â‡Jë‹¤ê°€, onResumeì‹œ 
+ * mInstrumentation.callActivityOnSaveInstanceStateì— ì˜í•´ onSaveInstanceStateê°€ í˜¸ì¶œë˜ì–´
+ * savedInstanceStateë¥¼ ì €ì¥í•˜ê²Œ ëœë‹¤. 
+ * ê·¸ëŸ¬ë©´ ê°•ì œë¡œ systemì— ì˜í•´ ì¢…ë£Œë˜ì–´ë„ ì°¨í›„ ì¬ì‹¤í–‰ì‹œ ë³µê·€ëœë‹¤.
+ * ì¬í˜„ë°©ë²•
+ * 1.ApiDemos Save & Restore ì‹¤í–‰, 2.HOMEí‚¤ë¡œ HOMEìœ¼ë¡œ ì´ë™, 3.ë‹¤ë¥¸ appì‹¤í–‰ messageê°™ì€ê±¸ë¡œ
+ * 4. DDMSë¡œ ApiDemos ê°•ì œë¡œ kill, 5.ë‹¤ì‹œ HOMEì„ ëˆŒëŸ¬ HOMEìœ¼ë¡œ ì´ë™, 
+ * 6. HOME longkeyë¥¼ ëˆŒëŸ¬ ì´ì „ ì‹¤í–‰ appì¤‘ ApiDemoë¥¼ ì„ íƒ
+ * ì°¸ê³ , ë§Œì•½ 4ë²ˆ ë‹¨ê³„ì—ì„œ Menuë¥¼ í†µí•´ ì‹¤í–‰í•˜ë©´ ApiDemos processìœ„ì— ìƒˆë¡œìš´ Save & Restoreê°€ 
+ * ìƒì„±ë˜ë¯€ë¡œ ì¬í˜„ë˜ì§€ ì•ŠëŠ”ë‹¤.
+ * ì°¸ê³ ë¡œ ì´ë ‡ê²Œ ê°•ì œì¢…ë£Œì— ì˜í•´ save & Restoreë˜ëŠ” widgetì€ IDë¥¼ ê°€ì§„ widgetëŒ€ìƒìœ¼ë¡œ ì‹¤ì‹œí•œë‹¤.
+ * IDê°€ ë„£ì§€ ì•Šìœ¼ë©´ save & restore ì•ˆë¨ 
+ * ì´ê²½ìš° ì²«ë²ˆì§¸ ë‘ë²ˆì§¸ edit text ëª¨ë‘ IDê°€ ìˆë¯€ìœ¼ë¡œ ë³µêµ¬ëœë‹¤ 
 
  * Copyright (C) 2007 The Android Open Source Project
  *
@@ -99,7 +99,7 @@ public class SaveRestoreState extends Activity
         ((TextView)findViewById(R.id.msg)).setText(R.string.save_restore_msg);
     }
 
-    /** ¾Æ·¡ 2°³ÀÇ ÇÔ¼ö´Â save & restore ±â´É°ú »ó°üÀÌ ¾ø´Ù.
+    /** ì•„ë˜ 2ê°œì˜ í•¨ìˆ˜ëŠ” save & restore ê¸°ëŠ¥ê³¼ ìƒê´€ì´ ì—†ë‹¤.
      * Retrieve the text that is currently in the "saved" editor.
      */
     CharSequence getSavedText() {

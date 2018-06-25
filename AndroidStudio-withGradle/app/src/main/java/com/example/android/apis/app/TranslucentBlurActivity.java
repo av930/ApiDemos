@@ -1,8 +1,8 @@
 /*
  * KJK_TALK APIDEMOS: App-> Activity-> TranslucentBlur
- * AndroidManifest.xmlÆÄÀÏ¿¡¼­ @style/Theme.Transparent¸¦ ÀÌ¿ëÇÏ¿© 
- * ÇöÀç Foreground¸¦ Åõ¸íÇÏ°Ô ÇÏ°í, getWindow().setFlags(FLAG_BLUR_BEHIND)·Î
- * ÀÌÀü È­¸éÀ» blurÇÏ°Ô ÇÏ¿© °ãÃÄÁö´Â È¿°ú¸¦ ¸¸µê.
+ * AndroidManifest.xmlíŒŒì¼ì—ì„œ @style/Theme.Transparentë¥¼ ì´ìš©í•˜ì—¬ 
+ * í˜„ì¬ Foregroundë¥¼ íˆ¬ëª…í•˜ê²Œ í•˜ê³ , getWindow().setFlags(FLAG_BLUR_BEHIND)ë¡œ
+ * ì´ì „ í™”ë©´ì„ blurí•˜ê²Œ í•˜ì—¬ ê²¹ì³ì§€ëŠ” íš¨ê³¼ë¥¼ ë§Œë“¦.
 
 
  * Copyright (C) 2007 The Android Open Source Project
@@ -52,7 +52,7 @@ public class TranslucentBlurActivity extends Activity {
         super.onCreate(icicle);
 
         // Have the system blur any windows behind this one.
-        // ½ÇÁ¦·Î µŞ¹è°æÀ» blur ½ÃÅ°´Â method, Âü°í·Î FLAG_DIM_BEHIND·Î dimming½ÃÅ³¼öµµ ÀÕ´Ù.
+        // ì‹¤ì œë¡œ ë’·ë°°ê²½ì„ blur ì‹œí‚¤ëŠ” method, ì°¸ê³ ë¡œ FLAG_DIM_BEHINDë¡œ dimmingì‹œí‚¬ìˆ˜ë„ ì‡ë‹¤.
         getWindow().setFlags(WindowManager.LayoutParams.FLAG_BLUR_BEHIND,
                 WindowManager.LayoutParams.FLAG_BLUR_BEHIND);
         

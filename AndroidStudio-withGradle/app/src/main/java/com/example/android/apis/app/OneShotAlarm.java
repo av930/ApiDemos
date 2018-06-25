@@ -1,7 +1,7 @@
 /*
  * KJK_TALK APIDEMOS: App -> Alarm-> Alarm Controller-> OneShotAlarm.java
- * androidManifest.xml ÆÄÀÏ¿¡¼­ <receiver android:name=".app.OneShotAlarm" android:process=":remote" />¿Í 
- * °°ÀÌ ±â¼úµÇ¾î remote process·Î launchµÈ´Ù.
+ * androidManifest.xml íŒŒì¼ì—ì„œ <receiver android:name=".app.OneShotAlarm" android:process=":remote" />ì™€ 
+ * ê°™ì´ ê¸°ìˆ ë˜ì–´ remote processë¡œ launchëœë‹¤.
 
 
  * Copyright (C) 2007 The Android Open Source Project
@@ -40,7 +40,7 @@ public class OneShotAlarm extends BroadcastReceiver
 {
     @Override
     public void onReceive(Context context, Intent intent)
-    {//Broadcast Msg¸¦ ¹ŞÀ¸¸é toast¸¦ º¸¿©ÁØ´Ù.
+    {//Broadcast Msgë¥¼ ë°›ìœ¼ë©´ toastë¥¼ ë³´ì—¬ì¤€ë‹¤.
         Toast.makeText(context, R.string.one_shot_received, Toast.LENGTH_SHORT).show();
     }
 }

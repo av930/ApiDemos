@@ -1,7 +1,7 @@
 /*
  * KJK_TALK APIDEMOS: App-> Content-> Resources-> Resources
- * CharSequence¿Í StringÀÇ Â÷ÀÌÁ¡À» º¸¿©ÁÖ´Â ¿¹Á¦·Î CharSequence´Â Style ¼Ó¼ºÀ» °¡Áö°í ÀÖ´Ù.
- * ÀÏ¹İ view¿¡¼­ ActivityÀÇ resource¸¦ °¡Á®¿À±â À§ÇØ context.getResources()¸¦ »ç¿ëÇß´Ù. 
+ * CharSequenceì™€ Stringì˜ ì°¨ì´ì ì„ ë³´ì—¬ì£¼ëŠ” ì˜ˆì œë¡œ CharSequenceëŠ” Style ì†ì„±ì„ ê°€ì§€ê³  ìˆë‹¤.
+ * ì¼ë°˜ viewì—ì„œ Activityì˜ resourceë¥¼ ê°€ì ¸ì˜¤ê¸° ìœ„í•´ context.getResources()ë¥¼ ì‚¬ìš©í–ˆë‹¤. 
 
 
  * Copyright (C) 2007 The Android Open Source Project
@@ -56,7 +56,7 @@ public class ResourcesSample extends Activity {
         String str;
 
         // ====== Using the Context.getString() convenience method ===========
-        // KJK_TALK: CharSequence¿Í String°úÀÇ Â÷ÀÌÁ¡
+        // KJK_TALK: CharSequenceì™€ Stringê³¼ì˜ ì°¨ì´ì 
         // Using the getString() convenience method, retrieve a string
         // resource that happens to have style information.  Note the use of
         // CharSequence instead of String so we don't lose the style info.
@@ -67,7 +67,7 @@ public class ResourcesSample extends Activity {
 
         // Use the same resource, but convert it to a string, which causes it
         // to lose the style information.
-        //KJK_TALK: String, CharSequenceÀ» StringÀ¸·Î ¹Ù²Ù¸é Style ¼Ó¼ºÀ» ÀÒ´Â´Ù.
+        //KJK_TALK: String, CharSequenceì„ Stringìœ¼ë¡œ ë°”ê¾¸ë©´ Style ì†ì„±ì„ ìƒëŠ”ë‹¤.
         str = getString(R.string.styled_text);
         tv = (TextView)findViewById(R.id.plain_text);
         tv.setText(str);
@@ -77,7 +77,7 @@ public class ResourcesSample extends Activity {
         // You might need to do this if your code is not in an activity.
         // For example View has a protected mContext field you can use.
         // In this case it's just 'this' since Activity is a context.
-        //KJK_TALK: ÀÏ¹İ view¿¡¼­ activity¿¡ ´Ş¸° CharµîÀÇ resource¸¦ ÀĞ¾î¿À´Â ¹æ¹ı
+        //KJK_TALK: ì¼ë°˜ viewì—ì„œ activityì— ë‹¬ë¦° Charë“±ì˜ resourceë¥¼ ì½ì–´ì˜¤ëŠ” ë°©ë²•
         Context context = this;
 
         // Get the Resources object from our context
@@ -88,7 +88,7 @@ public class ResourcesSample extends Activity {
         tv = (TextView)findViewById(R.id.res1);
         tv.setText(cs);
 
-        //KJK_TALK: ÀÌ¹Ì theme Á¤º¸´Â resource¿¡ µé¾î ÀÖÀ¸¹Ç·Î getXXXÇÔ¼ö·Î °¡Á®´Ù ¾²¸é µÈ´Ù.
+        //KJK_TALK: ì´ë¯¸ theme ì •ë³´ëŠ” resourceì— ë“¤ì–´ ìˆìœ¼ë¯€ë¡œ getXXXí•¨ìˆ˜ë¡œ ê°€ì ¸ë‹¤ ì“°ë©´ ëœë‹¤.
         // Note that the Resources class has methods like getColor(),
         // getDimen(), getDrawable() because themes are stored in resources.
         // You can use them, but you might want to take a look at the view

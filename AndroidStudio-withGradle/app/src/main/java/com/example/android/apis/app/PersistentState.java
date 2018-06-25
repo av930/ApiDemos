@@ -1,18 +1,18 @@
 /*
  * KJK_TALK APIDEMOS: App-> Activity-> PersistentState
-   act¸¦ ½ÃÀÛÇÑÈÄ ÀÌÀüÅ°¸¦ ´©¸£°Å³ª act¸¦ stack¿¡¼­ Á¾·á½ÃÅ°°Å³ª,
-   app ÀÚÃ¼¸¦ exitÇÏ¿© Á¾·á½ÃÅ³¼ö ÀÖ´Âµ¥, ÀÌ¶§ Àç ÁøÀÔ½Ã ±âÁ¸°ªÀ» º¹±¸ÇÏ´Â ¹æ¹ı
+   actë¥¼ ì‹œì‘í•œí›„ ì´ì „í‚¤ë¥¼ ëˆ„ë¥´ê±°ë‚˜ actë¥¼ stackì—ì„œ ì¢…ë£Œì‹œí‚¤ê±°ë‚˜,
+   app ìì²´ë¥¼ exití•˜ì—¬ ì¢…ë£Œì‹œí‚¬ìˆ˜ ìˆëŠ”ë°, ì´ë•Œ ì¬ ì§„ì…ì‹œ ê¸°ì¡´ê°’ì„ ë³µêµ¬í•˜ëŠ” ë°©ë²•
 
-   µÎ°³ÀÇ EditTextÁß
-   Ã¹¹øÂ° °ÍÀº pause½Ã ¹®ÀÚ¿­ ÀúÀåÇÏ°í resume½Ã ´Ù½Ã ÀĞ¾î¿À´Â ÀÛ¾÷À»  ÇÏ¿© Áö¼ÓÀûÀ¸·Î ÀÌÀü µ¥ÀÌÅÍ¸¦ º¸¿©ÁÖ°Ô ÇÑ´Ù.
-   µÎ¹øÂ°  EditText¿¡´Â ¾Æ¹«°Íµµ ÇÏÁö ¾Ê¾Æ,ÀúÀåµÇÁö ¾Ê´Â°ÍÀ» º¸¿©ÁØ´Ù.
+   ë‘ê°œì˜ EditTextì¤‘
+   ì²«ë²ˆì§¸ ê²ƒì€ pauseì‹œ ë¬¸ìì—´ ì €ì¥í•˜ê³  resumeì‹œ ë‹¤ì‹œ ì½ì–´ì˜¤ëŠ” ì‘ì—…ì„  í•˜ì—¬ ì§€ì†ì ìœ¼ë¡œ ì´ì „ ë°ì´í„°ë¥¼ ë³´ì—¬ì£¼ê²Œ í•œë‹¤.
+   ë‘ë²ˆì§¸  EditTextì—ëŠ” ì•„ë¬´ê²ƒë„ í•˜ì§€ ì•Šì•„,ì €ì¥ë˜ì§€ ì•ŠëŠ”ê²ƒì„ ë³´ì—¬ì¤€ë‹¤.
 
-   ±×¸®°í ¹öÆ°À» ´©¸£¸é »õ·ÎÀº act°¡ Ãß°¡µÇ´Âµ¥, ÀÌ °æ¿ì stack¿¡¼­ Áö¼ÓÀûÀ¸·Î ¸Ó¹°°í ÀÖÀ¸¹Ç·Î µû·Î ÀúÀåÇÒ ÇÊ¿ä°¡ ¾ø°Ô µÈ´Ù. 
+   ê·¸ë¦¬ê³  ë²„íŠ¼ì„ ëˆ„ë¥´ë©´ ìƒˆë¡œì€ actê°€ ì¶”ê°€ë˜ëŠ”ë°, ì´ ê²½ìš° stackì—ì„œ ì§€ì†ì ìœ¼ë¡œ ë¨¸ë¬¼ê³  ìˆìœ¼ë¯€ë¡œ ë”°ë¡œ ì €ì¥í•  í•„ìš”ê°€ ì—†ê²Œ ëœë‹¤. 
 
-Android¿¡¼­´Â data¸¦ ÀúÀåÇÏ´Â ¹æ¹ıÀ» 3°³ Á¦°øÇÏ°í ÀÖ´Ù, 
-1. preference±â¹ıÀ¸·Î xmlÇü½ÄÀ¸·Î apk°¡ ¼³Ä¡µÈ data¿µ¿ª¿¡ ÀúÀåÇÏ´Â ¹æ¹ı(ÀÌ ¹æ¹ı »ç¿ë)
-2. Contents Provider¸¦ ÅëÇØ SQLite DB·Î ÀúÀåÇÏ´Â ¹æ¹ı
-3. File OperationÀ» ÅëÇØ ±×³É ÀÏ¹İ file·Î ÀúÀåÇÏ´Â ¹æ¹ı
+Androidì—ì„œëŠ” dataë¥¼ ì €ì¥í•˜ëŠ” ë°©ë²•ì„ 3ê°œ ì œê³µí•˜ê³  ìˆë‹¤, 
+1. preferenceê¸°ë²•ìœ¼ë¡œ xmlí˜•ì‹ìœ¼ë¡œ apkê°€ ì„¤ì¹˜ëœ dataì˜ì—­ì— ì €ì¥í•˜ëŠ” ë°©ë²•(ì´ ë°©ë²• ì‚¬ìš©)
+2. Contents Providerë¥¼ í†µí•´ SQLite DBë¡œ ì €ì¥í•˜ëŠ” ë°©ë²•
+3. File Operationì„ í†µí•´ ê·¸ëƒ¥ ì¼ë°˜ fileë¡œ ì €ì¥í•˜ëŠ” ë°©ë²•
 
 
  * Copyright (C) 2007 The Android Open Source Project
@@ -109,7 +109,7 @@ public class PersistentState extends Activity
     /**
      * Upon being resumed we can retrieve the current state.  This allows us
      * to update the state if it was changed at any time while paused.
-     Àç½ÃÀÛ½Ã ÀúÀåµÈ ¹®ÀÚ¿­À» º¹±¸ÇÏ°í selection ¿µ¿ªÀ» º¹±¸ÇÑ´Ù.
+     ì¬ì‹œì‘ì‹œ ì €ì¥ëœ ë¬¸ìì—´ì„ ë³µêµ¬í•˜ê³  selection ì˜ì—­ì„ ë³µêµ¬í•œë‹¤.
      */
     @Override
     protected void onResume() {
@@ -131,15 +131,15 @@ public class PersistentState extends Activity
     /**
      * Any time we are paused we need to save away the current state, so it
      * will be restored correctly when we are resumed.
-     * Á¤Áö½Ã text¿Í selection ¿µ¿ªÀ» ÀúÀåÇÑ´Ù. 
-     * preference¿¡ ³Ö´Â ÇÔ¼ö·Î´Â putString,putInt,putBoolean,putFloat,putLongµîÀÌ Á¸ÀçÇÑ´Ù.
+     * ì •ì§€ì‹œ textì™€ selection ì˜ì—­ì„ ì €ì¥í•œë‹¤. 
+     * preferenceì— ë„£ëŠ” í•¨ìˆ˜ë¡œëŠ” putString,putInt,putBoolean,putFloat,putLongë“±ì´ ì¡´ì¬í•œë‹¤.
      * 
      */
     @Override
     protected void onPause() {
         super.onPause();
-        //getPreferences(mode): mode·Î´Â Private, Read, Write°¡ Á¸ÀçÇÏ¸ç,
-        //privateÀº ÀÚ±â apk¸¸, read´Â otherÀÇ read, write´Â otherÀÇ write±ÇÇÑ.
+        //getPreferences(mode): modeë¡œëŠ” Private, Read, Writeê°€ ì¡´ì¬í•˜ë©°,
+        //privateì€ ìê¸° apkë§Œ, readëŠ” otherì˜ read, writeëŠ” otherì˜ writeê¶Œí•œ.
         SharedPreferences.Editor editor = getPreferences(0).edit();
         editor.putString("text", mSaved.getText().toString());
         editor.putInt("selection-start", mSaved.getSelectionStart());

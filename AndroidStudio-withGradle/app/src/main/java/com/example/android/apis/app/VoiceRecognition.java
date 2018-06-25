@@ -1,6 +1,6 @@
 /*
  * KJK_TALK APIDEMOS: App-> Voice Recognition
- KJK_TALK NEEDTOSTUDY ¾î¶»°Ô ÇØ¾ß voice recognitionÀ» µ¿ÀÛ½ÃÅ°´ÂÁö ¸ğ¸£°Ú´Ù.
+ KJK_TALK NEEDTOSTUDY ì–´ë–»ê²Œ í•´ì•¼ voice recognitionì„ ë™ì‘ì‹œí‚¤ëŠ”ì§€ ëª¨ë¥´ê² ë‹¤.
 
 
  * Copyright (C) 2008 The Android Open Source Project
@@ -79,7 +79,7 @@ public class VoiceRecognition extends Activity implements OnClickListener {
         mSupportedLanguageView = (Spinner) findViewById(R.id.supported_languages);
 
         // Check to see if a recognition activity is present
-        //KJK_TALK: ¿©±â¼­ recognition activity °¡ Á¸ÀçÇÏÁö ¾Ê´Â´Ù.
+        //KJK_TALK: ì—¬ê¸°ì„œ recognition activity ê°€ ì¡´ì¬í•˜ì§€ ì•ŠëŠ”ë‹¤.
         PackageManager pm = getPackageManager();
         List<ResolveInfo> activities = pm.queryIntentActivities(
                 new Intent(RecognizerIntent.ACTION_RECOGNIZE_SPEECH), 0);

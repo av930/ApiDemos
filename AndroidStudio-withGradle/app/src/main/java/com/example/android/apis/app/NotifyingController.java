@@ -1,7 +1,7 @@
 /*
  * KJK_TALK APIDEMOS: App-> Notification->Notifying Service Controller
-status barÀÇ notificationÀ» service¸¦ ÀÌ¿ëÇÏ¿© ÁÖ±âÀûÀ¸·Î ¹Ù²Ù´Â ¼­ºñ½º
-ÀÌ·¸°Ô ¹Ù²Ù¸é notification pannel¿¡¼­µµ ÀÚµ¿À¸·Î º¯°æµÇ´Â°ÍÀ» È®ÀÎÇÒ¼ö ÀÖ´Ù.
+status barì˜ notificationì„ serviceë¥¼ ì´ìš©í•˜ì—¬ ì£¼ê¸°ì ìœ¼ë¡œ ë°”ê¾¸ëŠ” ì„œë¹„ìŠ¤
+ì´ë ‡ê²Œ ë°”ê¾¸ë©´ notification pannelì—ì„œë„ ìë™ìœ¼ë¡œ ë³€ê²½ë˜ëŠ”ê²ƒì„ í™•ì¸í• ìˆ˜ ìˆë‹¤.
 
 
  * Copyright (C) 2007 The Android Open Source Project
@@ -51,7 +51,7 @@ public class NotifyingController extends Activity {
 
     private OnClickListener mStartListener = new OnClickListener() {
         public void onClick(View v) {
-            //startService´Â Service¸¦ invoke½ÃÅ°´Â intent¸¦ paramÀ¸·Î ¹Ş´Â´Ù.
+            //startServiceëŠ” Serviceë¥¼ invokeì‹œí‚¤ëŠ” intentë¥¼ paramìœ¼ë¡œ ë°›ëŠ”ë‹¤.
             startService(new Intent(NotifyingController.this, 
                     NotifyingService.class));
         }

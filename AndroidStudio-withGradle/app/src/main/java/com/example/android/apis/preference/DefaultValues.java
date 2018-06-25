@@ -1,8 +1,8 @@
 /*
  * KJK_TALK APIDEMOS: App-> Preferences-> 4. Default Values
-* ¿ª½Ã ¸¶Âù°¡Áö·Î 1. Preferences from XML ¿¹Á¦¿Í ¿ÏÀüÈ÷ code´Â °°À¸³ª xml ÆÄÀÏÀÌ ´Ù¸£´Ù. 
- * Áï, ´Ü¼øÈ÷ preference°¡ ±â·ÏµÈ xmlÀ» inflate½ÃÅ°°Ô µÇ´Âµ¥, default value°¡ Á¸ÀçÇÏ´Â xmlÀÌ µÇ°Ú´Ù. 
-  * xml ÂüÁ¶
+* ì—­ì‹œ ë§ˆì°¬ê°€ì§€ë¡œ 1. Preferences from XML ì˜ˆì œì™€ ì™„ì „íˆ codeëŠ” ê°™ìœ¼ë‚˜ xml íŒŒì¼ì´ ë‹¤ë¥´ë‹¤. 
+ * ì¦‰, ë‹¨ìˆœíˆ preferenceê°€ ê¸°ë¡ëœ xmlì„ inflateì‹œí‚¤ê²Œ ë˜ëŠ”ë°, default valueê°€ ì¡´ì¬í•˜ëŠ” xmlì´ ë˜ê² ë‹¤. 
+  * xml ì°¸ì¡°
 
  * Copyright (C) 2007 The Android Open Source Project
  *

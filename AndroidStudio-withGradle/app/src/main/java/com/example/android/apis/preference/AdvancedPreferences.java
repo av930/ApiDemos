@@ -1,17 +1,17 @@
 /*
  * KJK_TALK APIDEMOS: App-> Preferences-> 2. Launching Preferences-> AdvancedPreferences
- * °úÁ¤A
- * 2. Launching Preferences¿¡¼­ buttonÀ» clickÇÏ±âÀü¿¡ TextView¿¡ Counter °ªÀÌ Ãâ·ÂµÈ´Ù.
- * ÀÌ¶§ default °ªÀ» °¡Á®¿À±â À§ÇØ¼­ PreferenceManager.setDefaultValues(R.xml.advanced_preferences)¸¦ 
- * ÇØÁÖ°Ô µÇ¸é advanced_preferences.xml ¿¡ Á¤ÀÇµÈ Ç×¸ñÀ» accessÇÒ¼ö ÀÖ°Ô µÇ¾î ÃÊ±â°ªÀ» °¡Á®¿Ã¼ö ÀÖ°Ô µÈ´Ù.
- * Áï, preference activity¸¦ ½ÇÇàÇÏ±âÀü¿¡ ¹Ì¸® preference°ªÀ» °¡Á®¿Ã¼ö ÀÖ´Â°ÍÀÌ´Ù 
- *°úÁ¤B 
- * ÀÌÈÄ ½ÇÁ¦ onCreate¿¡¼­ advanced_preferences.xmlÀ» inplateÇÏ¿© »ç¿ëÀÚÀÇ ´«¿¡ º¸¿©ÁÖ°ÔµÇ°í
- * ¿©±â¼­ preference ¿Í Textview¿¡ checkbox°¡ ´Ş¸° listÀ» º¸¿©ÁÖ°Ô µÇ´Âµ¥, 
- * checkbox °æ¿ì advanced_preferences.xml¿¡¼­ ÇØ´ç field¸¦ ÀĞ¾î¿Í code¿¡¼­ ÁÖ±âÀûÀ¸·Î
- * checkbox¸¦ en/disable ÇÑ´Ù.
+ * ê³¼ì •A
+ * 2. Launching Preferencesì—ì„œ buttonì„ clickí•˜ê¸°ì „ì— TextViewì— Counter ê°’ì´ ì¶œë ¥ëœë‹¤.
+ * ì´ë•Œ default ê°’ì„ ê°€ì ¸ì˜¤ê¸° ìœ„í•´ì„œ PreferenceManager.setDefaultValues(R.xml.advanced_preferences)ë¥¼ 
+ * í•´ì£¼ê²Œ ë˜ë©´ advanced_preferences.xml ì— ì •ì˜ëœ í•­ëª©ì„ accessí• ìˆ˜ ìˆê²Œ ë˜ì–´ ì´ˆê¸°ê°’ì„ ê°€ì ¸ì˜¬ìˆ˜ ìˆê²Œ ëœë‹¤.
+ * ì¦‰, preference activityë¥¼ ì‹¤í–‰í•˜ê¸°ì „ì— ë¯¸ë¦¬ preferenceê°’ì„ ê°€ì ¸ì˜¬ìˆ˜ ìˆëŠ”ê²ƒì´ë‹¤ 
+ *ê³¼ì •B 
+ * ì´í›„ ì‹¤ì œ onCreateì—ì„œ advanced_preferences.xmlì„ inplateí•˜ì—¬ ì‚¬ìš©ìì˜ ëˆˆì— ë³´ì—¬ì£¼ê²Œë˜ê³ 
+ * ì—¬ê¸°ì„œ preference ì™€ Textviewì— checkboxê°€ ë‹¬ë¦° listì„ ë³´ì—¬ì£¼ê²Œ ë˜ëŠ”ë°, 
+ * checkbox ê²½ìš° advanced_preferences.xmlì—ì„œ í•´ë‹¹ fieldë¥¼ ì½ì–´ì™€ codeì—ì„œ ì£¼ê¸°ì ìœ¼ë¡œ
+ * checkboxë¥¼ en/disable í•œë‹¤.
 
- *   KJK_TALK APIDEMOS: App-> Preferences-> 6. AdvancedPreferences °úÁ¤B¸¸ ÇÏ°Ô µÈ´Ù.    
+ *   KJK_TALK APIDEMOS: App-> Preferences-> 6. AdvancedPreferences ê³¼ì •Bë§Œ í•˜ê²Œ ëœë‹¤.    
  
  * Copyright (C) 2007 The Android Open Source Project
  *
@@ -42,15 +42,15 @@ import android.widget.Toast;
 
 /**
  * Example that shows finding a preference from the hierarchy and a custom preference type.
- */// KJK_TALK: Preference¸¦ ÀĞ¾î¿À±â À§ÇØ PreferenceActivity¸¦ »ó¼ÓÇß´Ù.
- // ¿©±â¿¡ preference°¡ º¯°æÇÒ¶§¸¶´Ù È£ÃâÇÏ±âÀ§ÇØ OnSharedPreferenceChangeListener¸¦ ´Ş¾Ò´Ù.
+ */// KJK_TALK: Preferenceë¥¼ ì½ì–´ì˜¤ê¸° ìœ„í•´ PreferenceActivityë¥¼ ìƒì†í–ˆë‹¤.
+ // ì—¬ê¸°ì— preferenceê°€ ë³€ê²½í• ë•Œë§ˆë‹¤ í˜¸ì¶œí•˜ê¸°ìœ„í•´ OnSharedPreferenceChangeListenerë¥¼ ë‹¬ì•˜ë‹¤.
 public class AdvancedPreferences extends PreferenceActivity implements OnSharedPreferenceChangeListener {
     public static final String KEY_MY_PREFERENCE = "my_preference";
     public static final String KEY_ADVANCED_CHECKBOX_PREFERENCE = "advanced_checkbox_preference";
 
     private CheckBoxPreference mCheckBoxPreference;
-    //KJK_CHECK: Handler: Handler¸¦ ¸¸µé¾ú´Ù´Â °ÍÀº ÇöÀç msg¿¡ ´ëÇØ handler¸¦ º°µµ·Î µÎ°Ú´Ù´Â ¶æ!!
-    // ÀÌ·¸°Ô ¸¸µé¾îÁø handler´Â ÇöÀç processÀÇ Looper¿¡ ÀÚµ¿ÀûÀ¸·Î ¿¬°áµÈ´Ù.
+    //KJK_CHECK: Handler: Handlerë¥¼ ë§Œë“¤ì—ˆë‹¤ëŠ” ê²ƒì€ í˜„ì¬ msgì— ëŒ€í•´ handlerë¥¼ ë³„ë„ë¡œ ë‘ê² ë‹¤ëŠ” ëœ»!!
+    // ì´ë ‡ê²Œ ë§Œë“¤ì–´ì§„ handlerëŠ” í˜„ì¬ processì˜ Looperì— ìë™ì ìœ¼ë¡œ ì—°ê²°ëœë‹¤.
     private Handler mHandler = new Handler();
 
     /**
@@ -59,14 +59,14 @@ public class AdvancedPreferences extends PreferenceActivity implements OnSharedP
     private Runnable mForceCheckBoxRunnable = new Runnable() {
         public void run() {
             if (mCheckBoxPreference != null) {
-                //ÁÖ±âÀûÀ¸·Î checkbox¸¦ check/uncheckÇÑ´Ù.
+                //ì£¼ê¸°ì ìœ¼ë¡œ checkboxë¥¼ check/uncheckí•œë‹¤.
                 mCheckBoxPreference.setChecked(!mCheckBoxPreference.isChecked());
             }
 
             // Force toggle again in a second
-            // KJK_TALK: ÇöÀç runnableÀÌ mHandler°¡ µ¿ÀÛÇÏ´Â thread(ÇöÀç thread)¿¡¼­ ÇØ´ç ½Ã°£ ÀÌÈÄ¿¡ 
-            // msg.callbackÀ¸·Î µî·ÏµÇ¾î thread°¡ ¾Æ´Ñ ÀÏ¹İ ÇÔ¼ö call·Î µ¿ÀÛÇÏµµ·Ï ¸¸µç´Ù.
-            // Áï thread·Î µ¿ÀÛÇÏÁö ¾Ê°í msg handler·Î µ¿ÀÛÇÑ´Ù.
+            // KJK_TALK: í˜„ì¬ runnableì´ mHandlerê°€ ë™ì‘í•˜ëŠ” thread(í˜„ì¬ thread)ì—ì„œ í•´ë‹¹ ì‹œê°„ ì´í›„ì— 
+            // msg.callbackìœ¼ë¡œ ë“±ë¡ë˜ì–´ threadê°€ ì•„ë‹Œ ì¼ë°˜ í•¨ìˆ˜ callë¡œ ë™ì‘í•˜ë„ë¡ ë§Œë“ ë‹¤.
+            // ì¦‰ threadë¡œ ë™ì‘í•˜ì§€ ì•Šê³  msg handlerë¡œ ë™ì‘í•œë‹¤.
             mHandler.postDelayed(this, 1000);
         }
     };
@@ -75,14 +75,14 @@ public class AdvancedPreferences extends PreferenceActivity implements OnSharedP
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        // Load the XML preferences file, preference.xmlÀ» ÀĞ¾î¿Í
+        // Load the XML preferences file, preference.xmlì„ ì½ì–´ì™€
         addPreferencesFromResource(R.xml.advanced_preferences);
 
         // Get a reference to the checkbox preference
-        //KJK_TALK:preference.xml¿¡¼­"advanced_checkbox_preference" ¹®ÀÚ¿­À» Ã£¾Æ checkboxÀÇ settingÀ» ÀĞ¾î¿Â´Ù.
-        //ROM¿¡¼­ °¡Á®¿À´Â°ÍÀÌ ¾Æ´Ô. 
-        //ÀÏ¹İÀûÀ¸·Î ¹«Á¶°Ç xml¿¡¼­ °¡Á®¿À´Âµ¥, »ç¿ëÀÚ Á¤ÀÇ¿¡ ÀÇÇØ ROM¿¡ ½ÇÁ¦ xml·Î µÈ preference¸¦ ÀúÀåÇÑÈÄ 
-        //°¡Á®¿Ã¼ö ÀÖ´Ù.
+        //KJK_TALK:preference.xmlì—ì„œ"advanced_checkbox_preference" ë¬¸ìì—´ì„ ì°¾ì•„ checkboxì˜ settingì„ ì½ì–´ì˜¨ë‹¤.
+        //ROMì—ì„œ ê°€ì ¸ì˜¤ëŠ”ê²ƒì´ ì•„ë‹˜. 
+        //ì¼ë°˜ì ìœ¼ë¡œ ë¬´ì¡°ê±´ xmlì—ì„œ ê°€ì ¸ì˜¤ëŠ”ë°, ì‚¬ìš©ì ì •ì˜ì— ì˜í•´ ROMì— ì‹¤ì œ xmlë¡œ ëœ preferenceë¥¼ ì €ì¥í•œí›„ 
+        //ê°€ì ¸ì˜¬ìˆ˜ ìˆë‹¤.
         mCheckBoxPreference = (CheckBoxPreference)getPreferenceScreen().findPreference(
                 KEY_ADVANCED_CHECKBOX_PREFERENCE);
     }
@@ -91,7 +91,7 @@ public class AdvancedPreferences extends PreferenceActivity implements OnSharedP
     protected void onResume() {
         super.onResume();
 
-        // Start the force toggle, thread.start°¡ ¾Æ´Ñ ÀÏ¹İ ÇÔ¼öcall·Î ½ÇÇà
+        // Start the force toggle, thread.startê°€ ì•„ë‹Œ ì¼ë°˜ í•¨ìˆ˜callë¡œ ì‹¤í–‰
         mForceCheckBoxRunnable.run();
 
         // Set up a listener whenever a key changes
@@ -108,7 +108,7 @@ public class AdvancedPreferences extends PreferenceActivity implements OnSharedP
         mHandler.removeCallbacks(mForceCheckBoxRunnable);
     }
 
-    //preference°¡ º¯°æÇÒ¶§¸¶´Ù È£ÃâµÈ´Ù.
+    //preferenceê°€ ë³€ê²½í• ë•Œë§ˆë‹¤ í˜¸ì¶œëœë‹¤.
     public void onSharedPreferenceChanged(SharedPreferences sharedPreferences, String key) {
         // Let's do something when my counter preference value changes
         if (key.equals(KEY_MY_PREFERENCE)) {

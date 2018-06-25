@@ -1,8 +1,8 @@
 /*
  * KJK_TALK APIDEMOS: App-> Preferences-> 1. Preferences from XML
-   preferences.xml¿¡ ±â¼úµÈ´ë·Î UI¸¦ ±¸¼ºÇÑ´Ù.
-   ÀÌ´Â Settings¿¡¼­ »ç¿ëµÉ UI ±¸¼ºÀ» ÀÏÄÂ´Â ÀüÇüÀûÀÎ xmlÀ» ¸»ÇÑ´Ù.
-   ApiDemosºĞ¼®.xls ÆÄÀÏ Âü°í
+   preferences.xmlì— ê¸°ìˆ ëœëŒ€ë¡œ UIë¥¼ êµ¬ì„±í•œë‹¤.
+   ì´ëŠ” Settingsì—ì„œ ì‚¬ìš©ë  UI êµ¬ì„±ì„ ì¼ì»«ëŠ” ì „í˜•ì ì¸ xmlì„ ë§í•œë‹¤.
+   ApiDemosë¶„ì„.xls íŒŒì¼ ì°¸ê³ 
 
 
  * Copyright (C) 2007 The Android Open Source Project
@@ -27,7 +27,7 @@ import com.example.android.apis.R;
 import android.os.Bundle;
 import android.preference.PreferenceActivity;
 
-public class PreferencesFromXml extends PreferenceActivity { //KJK_TALK: PreferenceActivity ¸¦ »ó¼Ó
+public class PreferencesFromXml extends PreferenceActivity { //KJK_TALK: PreferenceActivity ë¥¼ ìƒì†
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {

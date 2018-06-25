@@ -1,8 +1,8 @@
 /*
  * KJK_TALK APIDEMOS: App-> Preferences-> 2. Launching Preferences
- * ´Ù¸¥ activity¿¡ Á¤ÀÇµÈ preference¸¦ ÀĞ¾î¼­ »Ñ·ÁÁØ´Ù.
- settingÀ» ±¸¼ºÇÒ¶§ staticÇÑ preference.xml·Î ºÎÅÍ °ªÀ» ÀĞ¾î¿Ã¼ö ÀÖ´Âµ¥ 
- ÀÌ ¿¹Á¦¿¡¼­´Â ±×·¯ÇÑ xml¿¡ Á¤ÀÇµÈ °ªÀ» ¹Ì¸® ÀĞ¾î¿À°í ÀÖ´Ù.  
+ * ë‹¤ë¥¸ activityì— ì •ì˜ëœ preferenceë¥¼ ì½ì–´ì„œ ë¿Œë ¤ì¤€ë‹¤.
+ settingì„ êµ¬ì„±í• ë•Œ staticí•œ preference.xmlë¡œ ë¶€í„° ê°’ì„ ì½ì–´ì˜¬ìˆ˜ ìˆëŠ”ë° 
+ ì´ ì˜ˆì œì—ì„œëŠ” ê·¸ëŸ¬í•œ xmlì— ì •ì˜ëœ ê°’ì„ ë¯¸ë¦¬ ì½ì–´ì˜¤ê³  ìˆë‹¤.  
 
  * Copyright (C) 2007 The Android Open Source Project
  *
@@ -53,10 +53,10 @@ public class LaunchingPreferences extends Activity implements OnClickListener {
          * defaults.  This will only execute once -- when the defaults are applied
          * a boolean preference is set so they will not be applied again.
          */
-        //KJK_TALK: preference¸¦ ¼³Á¤ÇÏ´Â advanced_preferences.xml¿¡¼­ Á¤ÀÇÇÑ data¸¦ ÀĞ¾î¿À´Â ºÎºĞÀ¸
-        //main act¿¡¼­ sub actÀÇ default°ªÀ» È¹µæÇÏ±â À§ÇØ ÀĞ¾î¿Â´Ù.
-        //ÀÌ data´Â preference·Î »ç¿ëÀÚ Á¤ÀÇ¿¡ ÀÇÇØ ½ÇÁ¦ rom¿¡ ÀúÀåµÇ°Ô µÈ´Ù.
-        //readAgainÀÌ falseÀÌ¹Ç·Î ÃÖÃÊ ÇÑ¹ø¸¸ loadingÇÑ´Ù. true´Â ´Ù½Ã default°ªÀ» ¸Å¹ø ÀĞ¾î¿À°Ô ÇÑ´Ù.
+        //KJK_TALK: preferenceë¥¼ ì„¤ì •í•˜ëŠ” advanced_preferences.xmlì—ì„œ ì •ì˜í•œ dataë¥¼ ì½ì–´ì˜¤ëŠ” ë¶€ë¶„ìœ¼
+        //main actì—ì„œ sub actì˜ defaultê°’ì„ íšë“í•˜ê¸° ìœ„í•´ ì½ì–´ì˜¨ë‹¤.
+        //ì´ dataëŠ” preferenceë¡œ ì‚¬ìš©ì ì •ì˜ì— ì˜í•´ ì‹¤ì œ romì— ì €ì¥ë˜ê²Œ ëœë‹¤.
+        //readAgainì´ falseì´ë¯€ë¡œ ìµœì´ˆ í•œë²ˆë§Œ loadingí•œë‹¤. trueëŠ” ë‹¤ì‹œ defaultê°’ì„ ë§¤ë²ˆ ì½ì–´ì˜¤ê²Œ í•œë‹¤.
         PreferenceManager.setDefaultValues(this, R.xml.advanced_preferences, false);
 
         // Simple layout
@@ -67,14 +67,14 @@ public class LaunchingPreferences extends Activity implements OnClickListener {
         // Create a simple button that will launch the preferences
         Button launchPreferences = new Button(this);
         launchPreferences.setText(getString(R.string.launch_preference_activity));
-        //button¿¡ setOnClickListenerÀ» ´Ü´Ù. 
-        //KJK_TALK: ÇöÀç this°¡ OnClickListener¸¦ implementsÇÏ¿´À¸¸ç, OnClickListener´Â 
-        //onClickÀ» method°¡ Á¸ÀçÇÏ¸é µÈ´Ù. ¾Æ·¡ ÂüÁ¶.
+        //buttonì— setOnClickListenerì„ ë‹¨ë‹¤. 
+        //KJK_TALK: í˜„ì¬ thisê°€ OnClickListenerë¥¼ implementsí•˜ì˜€ìœ¼ë©°, OnClickListenerëŠ” 
+        //onClickì„ methodê°€ ì¡´ì¬í•˜ë©´ ëœë‹¤. ì•„ë˜ ì°¸ì¡°.
         launchPreferences.setOnClickListener(this);
-        //buttonÀ» layout¿¡ ´ŞµÇ ÀÌ¶§ layoutparamÀ» »ı¼ºÇÏ¿© À§Ä¡¸¦ Á¶Á¤ÇÑ´Ù. 
+        //buttonì„ layoutì— ë‹¬ë˜ ì´ë•Œ layoutparamì„ ìƒì„±í•˜ì—¬ ìœ„ì¹˜ë¥¼ ì¡°ì •í•œë‹¤. 
         layout.addView(launchPreferences, new LayoutParams(LayoutParams.MATCH_PARENT,
                 LayoutParams.WRAP_CONTENT));
-        //textview¸¦ ´Ü´Ù.
+        //textviewë¥¼ ë‹¨ë‹¤.
         mCounterText = new TextView(this);
         layout.addView(mCounterText, new LayoutParams(LayoutParams.MATCH_PARENT,
                 LayoutParams.WRAP_CONTENT));
@@ -107,11 +107,11 @@ public class LaunchingPreferences extends Activity implements OnClickListener {
         // Since we're in the same package, we can use this context to get
         // the default shared preferences
         SharedPreferences sharedPref = PreferenceManager.getDefaultSharedPreferences(this);
-        //KJK_TALK: À§¿¡¼­ PreferenceManager.setDefaultValues·Î advanced_preferences¸¦ ÀĞ¾î¿ÓÀ¸´Ï, 
-        //xml¿¡ ±â·ÏµÈ Rom¿¡ ÀúÀåµÈ data¸¦ »ç¿ëÇÒ¼ö ÀÖ°ÔµÈ´Ù. 
-        //AdvancedPreferences.KEY_MY_PREFERENCE ¿¡´Â defaultValue °ªÀÌ ÀúÀåµÇ¾î ÀÖ´Ù.
+        //KJK_TALK: ìœ„ì—ì„œ PreferenceManager.setDefaultValuesë¡œ advanced_preferencesë¥¼ ì½ì–´ì™“ìœ¼ë‹ˆ, 
+        //xmlì— ê¸°ë¡ëœ Romì— ì €ì¥ëœ dataë¥¼ ì‚¬ìš©í• ìˆ˜ ìˆê²Œëœë‹¤. 
+        //AdvancedPreferences.KEY_MY_PREFERENCE ì—ëŠ” defaultValue ê°’ì´ ì €ì¥ë˜ì–´ ìˆë‹¤.
         final int counter = sharedPref.getInt(AdvancedPreferences.KEY_MY_PREFERENCE, 0);
-        //KJK_TALK: È£ÃâÇÒ activity°¡ ÀúÀåÇØ³í °ªÀ» preference¿¡¼­ ÀĞ¾î¿Í ÇöÀç È­¸é¿¡ »Ñ·ÁÁØ´Ù.
+        //KJK_TALK: í˜¸ì¶œí•  activityê°€ ì €ì¥í•´ë…¼ ê°’ì„ preferenceì—ì„œ ì½ì–´ì™€ í˜„ì¬ í™”ë©´ì— ë¿Œë ¤ì¤€ë‹¤.
         mCounterText.setText(getString(R.string.counter_value_is) + " " + counter);
     }
 }

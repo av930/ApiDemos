@@ -1,9 +1,9 @@
 /*
  * KJK_TALK APIDEMOS: App-> Preferences-> 2. Launching Preferences-> AdvancedPreferences -> Mypreference.java
  * KJK_TALK APIDEMOS: App-> Preferences-> 6. AdvancedPreferences-> AdvancedPreferences -> Mypreference.java
- TextView³ª Checkbox°¡ ¾Æ´Ñ User Defined preference¸¦ advanced_preferences.xml¿¡¼­ Á¤ÀÇÇÏ¿© 
- act ½ÃÀÛ½Ã ÀÚµ¿À¸·Î  MyPreference.java°¡ »ı¼ºµÇ°Ô ÇÏ°í  preference¸¦ clickµîÀÇ event¸¦ º¸³¾¶§¸¶´Ù
- listener°¡ ÀÚµ¿À¸·Î ¹İÀÀÀ» º¸ÀÌµµ·Ï ÇÑ´Ù.
+ TextViewë‚˜ Checkboxê°€ ì•„ë‹Œ User Defined preferenceë¥¼ advanced_preferences.xmlì—ì„œ ì •ì˜í•˜ì—¬ 
+ act ì‹œì‘ì‹œ ìë™ìœ¼ë¡œ  MyPreference.javaê°€ ìƒì„±ë˜ê²Œ í•˜ê³   preferenceë¥¼ clickë“±ì˜ eventë¥¼ ë³´ë‚¼ë•Œë§ˆë‹¤
+ listenerê°€ ìë™ìœ¼ë¡œ ë°˜ì‘ì„ ë³´ì´ë„ë¡ í•œë‹¤.
 
 
  * Copyright (C) 2007 The Android Open Source Project
@@ -38,14 +38,14 @@ import android.widget.TextView;
  * This is an example of a custom preference type. The preference counts the
  * number of clicks it has received and stores/retrieves it from the storage.
  */
-public class MyPreference extends Preference { //KJK_TALK: ±×³É  Preference¸¦ »ó¼Ó¹Ş¾Ò´Ù.
+public class MyPreference extends Preference { //KJK_TALK: ê·¸ëƒ¥  Preferenceë¥¼ ìƒì†ë°›ì•˜ë‹¤.
     private int mClickCounter;
 
     // This is the constructor called by the inflater
-    // KJK_TALK: XMLÀ» inflateÇÒ¶§ È£ÃâµÊÀ» ¾Ë¼ö ÀÖ´Ù.
+    // KJK_TALK: XMLì„ inflateí• ë•Œ í˜¸ì¶œë¨ì„ ì•Œìˆ˜ ìˆë‹¤.
     public MyPreference(Context context, AttributeSet attrs) {
         super(context, attrs);
-        //»ç¿ëÀÚ Á¤ÀÇ layoutÀ¸·Î preference ÀÇ ÇÏ³ªÀÇ itemÀ¸·Î »ç¿ëµÈ´Ù.
+        //ì‚¬ìš©ì ì •ì˜ layoutìœ¼ë¡œ preference ì˜ í•˜ë‚˜ì˜ itemìœ¼ë¡œ ì‚¬ìš©ëœë‹¤.
         setWidgetLayoutResource(R.layout.preference_widget_mypreference);        
     }
 
@@ -54,15 +54,15 @@ public class MyPreference extends Preference { //KJK_TALK: ±×³É  Preference¸¦ »ó
         super.onBindView(view);
 
         // Set our custom views inside the layout
-        // xml¿¡¼­ ÇöÀç layoutÀ» »ç¿ëÇÏ°Ú´Ù°í Ç¥½Ã, 
-        // °¡Á®¿Â layoutÀÇ textview¿¡ ÇöÀç Áõ°¡µÈ ¼ıÀÚ¸¦ Ãâ·ÂÇÏµµ·Ï setÇØÁØ´Ù.
+        // xmlì—ì„œ í˜„ì¬ layoutì„ ì‚¬ìš©í•˜ê² ë‹¤ê³  í‘œì‹œ, 
+        // ê°€ì ¸ì˜¨ layoutì˜ textviewì— í˜„ì¬ ì¦ê°€ëœ ìˆ«ìë¥¼ ì¶œë ¥í•˜ë„ë¡ setí•´ì¤€ë‹¤.
         final TextView myTextView = (TextView) view.findViewById(R.id.mypreference_widget);
         if (myTextView != null) {
             myTextView.setText(String.valueOf(mClickCounter));
         }
     }
 
-    // button ´©¸¦ ¶§¸¶´Ù 1 ½Ä Áõ°¡½ÃÅ°´Â method 
+    // button ëˆ„ë¥¼ ë•Œë§ˆë‹¤ 1 ì‹ ì¦ê°€ì‹œí‚¤ëŠ” method 
     @Override
     protected void onClick() {
         int newValue = mClickCounter + 1;
@@ -75,13 +75,13 @@ public class MyPreference extends Preference { //KJK_TALK: ±×³É  Preference¸¦ »ó
 
         // Increment counter
         mClickCounter = newValue;
-        // ÀúÀå 
+        // ì €ì¥ 
         // Save to persistent storage (this method will make sure this
         // preference should be persistent, along with other useful checks)
         persistInt(mClickCounter);
         
         // Data has changed, notify so UI can be refreshed!
-        // KJK_TALK: data°¡ º¯°æµÇ¾úÀ»¶§ ¾Ë·ÁÁÖ´Â ÇÔ¼ö windowÀÇ UpdateData()¿Í °°´Ù.
+        // KJK_TALK: dataê°€ ë³€ê²½ë˜ì—ˆì„ë•Œ ì•Œë ¤ì£¼ëŠ” í•¨ìˆ˜ windowì˜ UpdateData()ì™€ ê°™ë‹¤.
         notifyChanged();
     }
 
@@ -105,8 +105,8 @@ public class MyPreference extends Preference { //KJK_TALK: ±×³É  Preference¸¦ »ó
         }
     }
 
-    //KJK_TALK: onSaveInstanceState °©ÀÚ±â Á¾·áµÇ´Â »óÈ²¿¡ ÀÚµ¿ÀûÀ¸·Î È£ÃâµÇ´Â method·Î 
-    //Â÷ÈÄ¿¡ º¹±ÍÇÒ¶§ ÀÌ Á¤º¸·Ñ °¡Áö°í º¹¿øÇÏ°Ô µÈ´Ù. 
+    //KJK_TALK: onSaveInstanceState ê°‘ìê¸° ì¢…ë£Œë˜ëŠ” ìƒí™©ì— ìë™ì ìœ¼ë¡œ í˜¸ì¶œë˜ëŠ” methodë¡œ 
+    //ì°¨í›„ì— ë³µê·€í• ë•Œ ì´ ì •ë³´ë¡¤ ê°€ì§€ê³  ë³µì›í•˜ê²Œ ëœë‹¤. 
     @Override
     protected Parcelable onSaveInstanceState() {
         /*
@@ -121,13 +121,13 @@ public class MyPreference extends Preference { //KJK_TALK: ±×³É  Preference¸¦ »ó
             return superState;
         }
 
-        // Save the instance state, °­Á¦·Î Á¾·áµÇ¾úÀ»¶§µµ clickCounter °ªÀ» ÀúÀåÇÏ°Ô µÈ´Ù.
+        // Save the instance state, ê°•ì œë¡œ ì¢…ë£Œë˜ì—ˆì„ë•Œë„ clickCounter ê°’ì„ ì €ì¥í•˜ê²Œ ëœë‹¤.
         final SavedState myState = new SavedState(superState);
         myState.clickCounter = mClickCounter;
         return myState;
     }
 
-    //KJK_TALK: onRestoreInstanceState °©ÀÚ±â Á¾·áµÇ´Â »óÈ²¿¡ ÀÚµ¿ÀûÀ¸·Î º¹¿øÀ» À§ÇØ È£ÃâµÇ´Â ÄÚµå
+    //KJK_TALK: onRestoreInstanceState ê°‘ìê¸° ì¢…ë£Œë˜ëŠ” ìƒí™©ì— ìë™ì ìœ¼ë¡œ ë³µì›ì„ ìœ„í•´ í˜¸ì¶œë˜ëŠ” ì½”ë“œ
     @Override
     protected void onRestoreInstanceState(Parcelable state) {
         if (!state.getClass().equals(SavedState.class)) {
@@ -144,7 +144,7 @@ public class MyPreference extends Preference { //KJK_TALK: ±×³É  Preference¸¦ »ó
     }
 
 
-    //KJK_TALK: preference¿¡¼­ ÀúÀåÇÏ°íÀÚ ÇÏ´Â ½ÇÁ¦ Á¤º¸¸¦ ´ãÀº class
+    //KJK_TALK: preferenceì—ì„œ ì €ì¥í•˜ê³ ì í•˜ëŠ” ì‹¤ì œ ì •ë³´ë¥¼ ë‹´ì€ class
     /**
      * SavedState, a subclass of {@link BaseSavedState}, will store the state
      * of MyPreference, a subclass of Preference.

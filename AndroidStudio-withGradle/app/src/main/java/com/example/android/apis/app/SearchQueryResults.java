@@ -1,9 +1,9 @@
 /*
  * KJK_TALK APIDEMOS: App-> Search-> Query Search Results
- * Invoke Search·Î °Ë»öÇÑ °á°ú·Î º¸ÀÌ°Å³ª, Á÷Á¢ menu¿¡¼­ Query Search Results¸¦ ½ÇÇà½ÃÄÑ 
- * ÇØ´ç activity¸¦ ¶ç¿ï¼ö ÀÖ´Ù 
- * ÀÌ ¿¹Á¦´Â searchÇÑ query¹®ÀÚ¿­°ú additional Á¤º¸¸¦ ¾î¶»°Ô ´Ù¸¥ act¿¡¼­ È¹µæÇÒ¼ö ÀÖ´ÂÁö 
- * º¸¿©ÁÖ´Â ¿¹Á¦ ÀÌ´Ù. KJK_TALK: NEEDTOSTUDY
+ * Invoke Searchë¡œ ê²€ìƒ‰í•œ ê²°ê³¼ë¡œ ë³´ì´ê±°ë‚˜, ì§ì ‘ menuì—ì„œ Query Search Resultsë¥¼ ì‹¤í–‰ì‹œì¼œ 
+ * í•´ë‹¹ activityë¥¼ ë„ìš¸ìˆ˜ ìˆë‹¤ 
+ * ì´ ì˜ˆì œëŠ” searchí•œ queryë¬¸ìì—´ê³¼ additional ì •ë³´ë¥¼ ì–´ë–»ê²Œ ë‹¤ë¥¸ actì—ì„œ íšë“í• ìˆ˜ ìˆëŠ”ì§€ 
+ * ë³´ì—¬ì£¼ëŠ” ì˜ˆì œ ì´ë‹¤. KJK_TALK: NEEDTOSTUDY
 
 
  * Copyright (C) 2008 The Android Open Source Project
@@ -59,10 +59,10 @@ public class SearchQueryResults extends Activity
         // get and process search query here
         final Intent queryIntent = getIntent();
         final String queryAction = queryIntent.getAction();
-        if (Intent.ACTION_SEARCH.equals(queryAction)) { //KJK_TALK: search bar °á°ú·Î ¶ç¿î°æ¿ì 
+        if (Intent.ACTION_SEARCH.equals(queryAction)) { //KJK_TALK: search bar ê²°ê³¼ë¡œ ë„ìš´ê²½ìš° 
             doSearchQuery(queryIntent, "onCreate()");
         }
-        else {//KJK_TALK: ±×³É menu·Î ¶ç¿î °æ¿ì 
+        else {//KJK_TALK: ê·¸ëƒ¥ menuë¡œ ë„ìš´ ê²½ìš° 
             mDeliveredByText.setText("onCreate(), but no ACTION_SEARCH intent");
         }
     }
@@ -73,7 +73,7 @@ public class SearchQueryResults extends Activity
      * This is where we check the incoming intent for a query string.
      * 
      * @param newIntent The intent used to restart this activity
-     *///KJK_TALK: »õ·Î¿î intent°¡ ¿Ã¶§ È£ÃâµÈ´Ù.
+     *///KJK_TALK: ìƒˆë¡œìš´ intentê°€ ì˜¬ë•Œ í˜¸ì¶œëœë‹¤.
     @Override
     public void onNewIntent(final Intent newIntent) {
         super.onNewIntent(newIntent);
@@ -98,7 +98,7 @@ public class SearchQueryResults extends Activity
     private void doSearchQuery(final Intent queryIntent, final String entryPoint) {
         
         // The search query is provided as an "extra" string in the query intent
-        // KJK_TALK: ÇöÀç QueryStringÀ» ¾ò´Â ¹æ¹ı
+        // KJK_TALK: í˜„ì¬ QueryStringì„ ì–»ëŠ” ë°©ë²•
         final String queryString = queryIntent.getStringExtra(SearchManager.QUERY);
         mQueryText.setText(queryString);
         
@@ -111,7 +111,7 @@ public class SearchQueryResults extends Activity
         // you will receive it as an "extra" bundle in the query intent. 
         // The bundle can contain any number of elements, using any number of keys;
         // For this Api Demo we're just using a single string, stored using "demo key".
-        // KJK_TALK: ÇöÀç QueryString°ú ÇÔ²² µé¾î¿Â contextÁ¤º¸¸¦ ¾ò´Â¹æ¹ı 
+        // KJK_TALK: í˜„ì¬ QueryStringê³¼ í•¨ê»˜ ë“¤ì–´ì˜¨ contextì •ë³´ë¥¼ ì–»ëŠ”ë°©ë²• 
         final Bundle appData = queryIntent.getBundleExtra(SearchManager.APP_DATA);
         if (appData == null) {
             mAppDataText.setText("<no app data bundle>");

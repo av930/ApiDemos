@@ -1,8 +1,8 @@
 /*
  * KJK_TALK APIDEMOS: Views-> Lists-> 1.Array
-  List¸¦ ±¸ÇöÇÒ¼ö ÀÖ´Â ActÀÎ ListActivity »ç¿ë¹ıÀ¸·Î ±âÁ¸ Act¿¡ List±â´ÉÀ» Ãß°¡ÇÑ°ÍÀÌ´Ù.
-  °£´ÜÇÏ°Ô setListAdapter¸¸À» È£ÃâÇÏ°í ÀÌ¶§, listlayout¿¡ µé¾î°¥ text layout¸¸ (simple_list_item_1)Á¤ÇØÁÖ°í
-  list·Î ±¸¼ºÇÒ stringÀ» mStrings¿¡ ³Ö¾îÁÖ¸é ÇØ´ç stringÀ¸·Î list¸¦ ±¸¼ºÇØÁØ´Ù.
+  Listë¥¼ êµ¬í˜„í• ìˆ˜ ìˆëŠ” Actì¸ ListActivity ì‚¬ìš©ë²•ìœ¼ë¡œ ê¸°ì¡´ Actì— Listê¸°ëŠ¥ì„ ì¶”ê°€í•œê²ƒì´ë‹¤.
+  ê°„ë‹¨í•˜ê²Œ setListAdapterë§Œì„ í˜¸ì¶œí•˜ê³  ì´ë•Œ, listlayoutì— ë“¤ì–´ê°ˆ text layoutë§Œ (simple_list_item_1)ì •í•´ì£¼ê³ 
+  listë¡œ êµ¬ì„±í•  stringì„ mStringsì— ë„£ì–´ì£¼ë©´ í•´ë‹¹ stringìœ¼ë¡œ listë¥¼ êµ¬ì„±í•´ì¤€ë‹¤.
 
 
  * Copyright (C) 2007 The Android Open Source Project
@@ -39,11 +39,11 @@ public class List1 extends ListActivity {
 
         // Use an existing ListAdapter that will map an array
         // of strings to TextViews,
-        //KJK_TALK: ListView¿¡ ArraryAdapter¸¦ ÀÌ¿ëÇÏ¿© data¸¦ °ø±ŞÇØÁÖ¸é µÈ´Ù.
-        //±×·¯¸é ³»ºÎÀûÀ¸·Î °ü¸®ÇÏ´Â listview¿¡ ArrayAdapter¸¦ ºÙÀÌ°Ô µÈ´Ù.
+        //KJK_TALK: ListViewì— ArraryAdapterë¥¼ ì´ìš©í•˜ì—¬ dataë¥¼ ê³µê¸‰í•´ì£¼ë©´ ëœë‹¤.
+        //ê·¸ëŸ¬ë©´ ë‚´ë¶€ì ìœ¼ë¡œ ê´€ë¦¬í•˜ëŠ” listviewì— ArrayAdapterë¥¼ ë¶™ì´ê²Œ ëœë‹¤.
         setListAdapter(new ArrayAdapter<String>(this,
                 android.R.layout.simple_list_item_1, mStrings));
-        //KJK_TALK: ÀÔ·ÂÇÑ ±ÛÀÚ¿Í matchµÇ´Â ´Ü¾î°¡ µé¾îÀÖ´Â item¸¸ list upµÇ´Â ±â´ÉÀ» on
+        //KJK_TALK: ì…ë ¥í•œ ê¸€ìì™€ matchë˜ëŠ” ë‹¨ì–´ê°€ ë“¤ì–´ìˆëŠ” itemë§Œ list upë˜ëŠ” ê¸°ëŠ¥ì„ on
         getListView().setTextFilterEnabled(true);
     }
 

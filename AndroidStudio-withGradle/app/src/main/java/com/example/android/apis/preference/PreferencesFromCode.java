@@ -1,8 +1,8 @@
 /*
  * KJK_TALK APIDEMOS: App-> Preferences-> 5. Preferences from code
-   1¹ø ¿¹Á¦°¡ preferences.xmlÀ» ÀÌ¿ëÇÏ¿© È­¸éÀ» ±¸¼ºÇÏ¿´´Ù¸é, 
-   5¹ø ¿¹Á¦¿¡¼­´Â ¸ğµÎ code¸¦ ÀÌ¿ëÇÏ¿© 1¹ø¿¹Á¦¿Í ¶È°°ÀÌ preference È­¸éÀ» ±¸¼ºÇÑ´Ù.
-   ApiDemosºĞ¼®.xls ÆÄÀÏ Âü°í
+   1ë²ˆ ì˜ˆì œê°€ preferences.xmlì„ ì´ìš©í•˜ì—¬ í™”ë©´ì„ êµ¬ì„±í•˜ì˜€ë‹¤ë©´, 
+   5ë²ˆ ì˜ˆì œì—ì„œëŠ” ëª¨ë‘ codeë¥¼ ì´ìš©í•˜ì—¬ 1ë²ˆì˜ˆì œì™€ ë˜‘ê°™ì´ preference í™”ë©´ì„ êµ¬ì„±í•œë‹¤.
+   ApiDemosë¶„ì„.xls íŒŒì¼ ì°¸ê³ 
 
 
  * Copyright (C) 2007 The Android Open Source Project
@@ -44,11 +44,11 @@ public class PreferencesFromCode extends PreferenceActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        // Root, preference screenÀ» ¸¸µç´Ù.
+        // Root, preference screenì„ ë§Œë“ ë‹¤.
         PreferenceScreen root = getPreferenceManager().createPreferenceScreen(this);
         
-        //KJK_TALK: code·Î preference¸¦ »ı¼ºÇÏ±â À§ÇØ¼­´Â xml inflateÇÏµíÀÌ 
-        //Ãß°¡ÀûÀ¸·Î preference È¯°æÀ» loadingÇØ¾ß ÇÑ´Ù.
+        //KJK_TALK: codeë¡œ preferenceë¥¼ ìƒì„±í•˜ê¸° ìœ„í•´ì„œëŠ” xml inflateí•˜ë“¯ì´ 
+        //ì¶”ê°€ì ìœ¼ë¡œ preference í™˜ê²½ì„ loadingí•´ì•¼ í•œë‹¤.
         setPreferenceScreen(root);
         populatePreferenceHierarchy(root);
     }

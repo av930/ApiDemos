@@ -1,6 +1,6 @@
 /*
  * KJK_TALK APIDEMOS: App-> Alarm-> Alarm Controller-> RepeatingAlarm.java
- * Alarm Manager service¿¡¼­ ÁÖ±âÀûÀ¸·Î broadcast msg¸¦ ³¯¸°´Ù.
+ * Alarm Manager serviceì—ì„œ ì£¼ê¸°ì ìœ¼ë¡œ broadcast msgë¥¼ ë‚ ë¦°ë‹¤.
 
 
  * Copyright (C) 2007 The Android Open Source Project

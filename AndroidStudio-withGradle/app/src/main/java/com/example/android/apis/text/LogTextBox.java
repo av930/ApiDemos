@@ -1,9 +1,9 @@
 /*
  * KJK_TALK APIDEMOS: Text-> LogTextBox1 : LogTextBox
-   LogTextBox1¿¡¼­ LogTextBox class¸¦ »ç¿ëÇÑ´Ù.
-   link´Â import°¡ ¾Æ´Ñ build system¿¡¼­ ÇÏ°Ô µÈ´Ù.
-   ¾Æ·¡¿¡¼­ scrolling°ú TextView ¼Ó¼ºÀ» default·Î editable·Î ÇÏ±âÀ§ÇØ¼­
-   TextView¸¦ ÀçÁ¤ÀÇ ÇÏ°Ô µÇ¾ú´Ù. 
+   LogTextBox1ì—ì„œ LogTextBox classë¥¼ ì‚¬ìš©í•œë‹¤.
+   linkëŠ” importê°€ ì•„ë‹Œ build systemì—ì„œ í•˜ê²Œ ëœë‹¤.
+   ì•„ë˜ì—ì„œ scrollingê³¼ TextView ì†ì„±ì„ defaultë¡œ editableë¡œ í•˜ê¸°ìœ„í•´ì„œ
+   TextViewë¥¼ ì¬ì •ì˜ í•˜ê²Œ ë˜ì—ˆë‹¤. 
 
 
  * Copyright (C) 2007 The Android Open Source Project
@@ -54,14 +54,14 @@ public class LogTextBox extends TextView {
         super(context, attrs, defStyle);
     }
 
-    //KJK_TALK: scrollingÀ» ÇÏ±â À§ÇØ¼­´Â ¹İµå½Ã overridingÇØ¼­ 
-    //scrolling method¸¦ ÁöÁ¤ÇØ¾ß ÇÑ´Ù.
+    //KJK_TALK: scrollingì„ í•˜ê¸° ìœ„í•´ì„œëŠ” ë°˜ë“œì‹œ overridingí•´ì„œ 
+    //scrolling methodë¥¼ ì§€ì •í•´ì•¼ í•œë‹¤.
     @Override
     protected MovementMethod getDefaultMovementMethod() {
         return ScrollingMovementMethod.getInstance();
     }
 
-    //KJK_TALK: return °ªÀ» Editable·Î º¯°æÇØ¼­ º¸³»±â À§ÇØ overridingÇÏ¿´´Ù. 
+    //KJK_TALK: return ê°’ì„ Editableë¡œ ë³€ê²½í•´ì„œ ë³´ë‚´ê¸° ìœ„í•´ overridingí•˜ì˜€ë‹¤. 
     @Override
     public Editable getText() {
         return (Editable) super.getText();

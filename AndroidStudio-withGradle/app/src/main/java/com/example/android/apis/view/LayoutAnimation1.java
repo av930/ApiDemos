@@ -1,7 +1,7 @@
 /*
  * KJK_TALK APIDEMOS: Views-> Layout Animation-> 1.Grid Fade-> LayoutAnimation1.java
- * title barÀÇ stringÀ» ¹Ù²Ù´Â ¿¹Á¦
- * Âü°í·Î title bar´Â notification windor (indicator)¿Í´Â ´Ù¸§.
+ * title barì˜ stringì„ ë°”ê¾¸ëŠ” ì˜ˆì œ
+ * ì°¸ê³ ë¡œ title barëŠ” notification windor (indicator)ì™€ëŠ” ë‹¤ë¦„.
 
 
  * Copyright (C) 2007 The Android Open Source Project

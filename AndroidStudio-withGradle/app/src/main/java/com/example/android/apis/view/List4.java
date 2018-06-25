@@ -1,7 +1,7 @@
 /*
  * KJK_TALK APIDEMOS: Views-> Lists-> 3. ListAdapter 
- ¾ÕÀÇ ¿¹Á¦¿Í ´Ù¸£°Ô ¹Ì¸®Á¤ÀÇµÈ xml layout¿¡ ³Ö´Â°ÍÀÌ ¾Æ´Ï¶ó »ç¿ëÀÚ°¡ Á¤ÀÇÇÑ item layout¿¡ 
- »ç¿ëÀÚ°¡ Á¤ÀÇÇÑ data¸¦ ½á¼­, ÇØ´ç value¸¦ ³Ö¾î Ãâ·ÂÇÏ´Â ¿¹Á¦ 
+ ì•ì˜ ì˜ˆì œì™€ ë‹¤ë¥´ê²Œ ë¯¸ë¦¬ì •ì˜ëœ xml layoutì— ë„£ëŠ”ê²ƒì´ ì•„ë‹ˆë¼ ì‚¬ìš©ìê°€ ì •ì˜í•œ item layoutì— 
+ ì‚¬ìš©ìê°€ ì •ì˜í•œ dataë¥¼ ì¨ì„œ, í•´ë‹¹ valueë¥¼ ë„£ì–´ ì¶œë ¥í•˜ëŠ” ì˜ˆì œ 
 
 
  * Copyright (C) 2007 The Android Open Source Project
@@ -42,7 +42,7 @@ public class List4 extends ListActivity {
     public void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        // Use our own list adapter, »ç¿ëÀÚ°¡ Á¤ÀÇÇÑ adapter¸¦ »ç¿ëÇÏ°Ú´Ù.
+        // Use our own list adapter, ì‚¬ìš©ìê°€ ì •ì˜í•œ adapterë¥¼ ì‚¬ìš©í•˜ê² ë‹¤.
         setListAdapter(new SpeechListAdapter(this));
     }
 
@@ -114,7 +114,7 @@ public class List4 extends ListActivity {
         private Context mContext;
         
 
-        //KJK_TALK: »ç¿ëÀÚ°¡ Á¤ÀÇÇÑ data 1/2 
+        //KJK_TALK: ì‚¬ìš©ìê°€ ì •ì˜í•œ data 1/2 
     }
     
     /**
@@ -130,11 +130,11 @@ public class List4 extends ListActivity {
 
             // Here we build the child views in code. They could also have
             // been specified in an XML file.
-            //KJK_TALK: LinearLayoutÀ» »ó¼Ó¹Ş¾ÑÀ¸¹Ç·Î °Å±â¿¡ textview 2°³¸¦ ¸¸µé°í 
-            // ¸¸µé¾îÁø textview¿¡ ÃÊ±â°ª°ú LayoutParamsÀ» ¼³Á¤ÇÏ¿© ºÙÀÎ´Ù.
+            //KJK_TALK: LinearLayoutì„ ìƒì†ë°›ì•—ìœ¼ë¯€ë¡œ ê±°ê¸°ì— textview 2ê°œë¥¼ ë§Œë“¤ê³  
+            // ë§Œë“¤ì–´ì§„ textviewì— ì´ˆê¸°ê°’ê³¼ LayoutParamsì„ ì„¤ì •í•˜ì—¬ ë¶™ì¸ë‹¤.
             mTitle = new TextView(context);
             mTitle.setText(title);
-            //KJK_TALK: ÇöÀç this°¡ viewgroupÀÌ¹Ç·Î addview°¡ °¡´ÉÇÏ´Ù.
+            //KJK_TALK: í˜„ì¬ thisê°€ viewgroupì´ë¯€ë¡œ addviewê°€ ê°€ëŠ¥í•˜ë‹¤.
             addView(mTitle, new LinearLayout.LayoutParams(
                     LayoutParams.MATCH_PARENT, LayoutParams.WRAP_CONTENT));
 

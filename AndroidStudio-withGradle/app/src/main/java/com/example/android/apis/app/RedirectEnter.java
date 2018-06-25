@@ -1,8 +1,8 @@
 /*
  * KJK_TALK APIDEMOS: App-> Activity-> Redirection
-act A-> B-> C°¡ ÀÖ´Âµ¥, B¸¦ »ç¿ëÀÚÀÇ ´«¿¡ º¸¿©ÁÖÁö ¾Ê°í, ¹Ù·Î C·Î °¡´Â È¿°ú¸¦  ³ªÅ¸³»´Â ¿¹Á¦·Î 
-¸¸¾à C¿¡¼­ ¾î¶² °ªÀ» insert ÇÑ´Ù¸é B°¡ »ı¼ºµÇ¾î µ¹¾Æ°¥¶§ B¸¦ °ÅÃÄ¼­ µ¹¾Æ°¡µµ·Ï ÇÏ°í, 
- ±×³É back key·Î Ãë¼ÒÇÑ´Ù¸é C-> A·Î ¹Ù·Î °¡µµ·Ï ±¸¼ºÇÏ¿´´Ù.
+act A-> B-> Cê°€ ìˆëŠ”ë°, Bë¥¼ ì‚¬ìš©ìì˜ ëˆˆì— ë³´ì—¬ì£¼ì§€ ì•Šê³ , ë°”ë¡œ Cë¡œ ê°€ëŠ” íš¨ê³¼ë¥¼  ë‚˜íƒ€ë‚´ëŠ” ì˜ˆì œë¡œ 
+ë§Œì•½ Cì—ì„œ ì–´ë–¤ ê°’ì„ insert í•œë‹¤ë©´ Bê°€ ìƒì„±ë˜ì–´ ëŒì•„ê°ˆë•Œ Bë¥¼ ê±°ì³ì„œ ëŒì•„ê°€ë„ë¡ í•˜ê³ , 
+ ê·¸ëƒ¥ back keyë¡œ ì·¨ì†Œí•œë‹¤ë©´ C-> Aë¡œ ë°”ë¡œ ê°€ë„ë¡ êµ¬ì„±í•˜ì˜€ë‹¤.
  
 
  * Copyright (C) 2007 The Android Open Source Project
@@ -61,7 +61,7 @@ public class RedirectEnter extends Activity
             // example.
             Intent intent = new Intent(RedirectEnter.this, RedirectMain.class);
             startActivity(intent);
-            //KJK_TALK: finish()ÇÏÁö ¾ÊÀ¸¹Ç·Î act stack¿¡ Á¸ÀçÇÑ´Ù.
+            //KJK_TALK: finish()í•˜ì§€ ì•Šìœ¼ë¯€ë¡œ act stackì— ì¡´ì¬í•œë‹¤.
         }
     };
 }

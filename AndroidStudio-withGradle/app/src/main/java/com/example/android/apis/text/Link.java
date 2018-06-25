@@ -1,10 +1,10 @@
 /*
  * KJK_TALK APIDEMOS: Text-> Linkify.Link
-   String¿¡ link¸¦ °Å´Â ¹æ¹ıÀ» 4°¡Áö ¹æ¹ıÀ¸·Î º¸¿©ÁÖ´Â ¿¹Á¦ 
-   -xml¿¡ ±â·ÏµÈ ÀÏ¹İ¹®ÀÚ¿­À» layoutÀ¸·Î ÀĞ¾î Ã³¸®ÇÏ´Â ¹æ¹ı1
-   -string¿¡ HTML tag¸¦ ´ŞÀº ¹®ÀÚ¿­À» layoutÀ¸·Î ÀĞ¾î Ã³¸®ÇÏ´Â ¹æ¹ı2
-   -stingÀ» html¹®ÀÚ¿­·Î ¸¸µé¾î ³õ°í HTML ¹®ÀÚ¿­À» code·Î Ã³¸®ÇÏ´Â ¹æ¹ı3
-   -ÀÏ¹İ ¹®ÀÚ¿­À» code·Î Ã³¸®ÇÏ´Â ¹æ¹ı4
+   Stringì— linkë¥¼ ê±°ëŠ” ë°©ë²•ì„ 4ê°€ì§€ ë°©ë²•ìœ¼ë¡œ ë³´ì—¬ì£¼ëŠ” ì˜ˆì œ 
+   -xmlì— ê¸°ë¡ëœ ì¼ë°˜ë¬¸ìì—´ì„ layoutìœ¼ë¡œ ì½ì–´ ì²˜ë¦¬í•˜ëŠ” ë°©ë²•1
+   -stringì— HTML tagë¥¼ ë‹¬ì€ ë¬¸ìì—´ì„ layoutìœ¼ë¡œ ì½ì–´ ì²˜ë¦¬í•˜ëŠ” ë°©ë²•2
+   -stingì„ htmlë¬¸ìì—´ë¡œ ë§Œë“¤ì–´ ë†“ê³  HTML ë¬¸ìì—´ì„ codeë¡œ ì²˜ë¦¬í•˜ëŠ” ë°©ë²•3
+   -ì¼ë°˜ ë¬¸ìì—´ì„ codeë¡œ ì²˜ë¦¬í•˜ëŠ” ë°©ë²•4
 
 
  * Copyright (C) 2007 The Android Open Source Project
@@ -42,17 +42,17 @@ public class Link extends Activity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
 
-        //KJK_TALK: ÀÏ¹İ¹®ÀÚ¿­À» layoutÀ¸·Î ÀĞ¾î Ã³¸®ÇÏ´Â ¹æ¹ı1
+        //KJK_TALK: ì¼ë°˜ë¬¸ìì—´ì„ layoutìœ¼ë¡œ ì½ì–´ ì²˜ë¦¬í•˜ëŠ” ë°©ë²•1
         // text1 shows the android:autoLink property, which
         // automatically linkifies things like URLs and phone numbers
         // found in the text.  No java code is needed to make this
         // work. 
-        //layout.xmlÀÎ link.xml¿¡¼­ android:autoLink="all"·Î Ç¥±âÇÔÀ¸·Î¼­ °¡´É
-        //strings.xml¿¡ ±â·ÏµÈ string¿¡¼­ URI°ú ÀüÈ­¹øÈ£¿¡ ´ëÇÑ ¸µÅ©¸¦ ÀÚµ¿À¸·Î ´Ş¾ÆÁÜ 
+        //layout.xmlì¸ link.xmlì—ì„œ android:autoLink="all"ë¡œ í‘œê¸°í•¨ìœ¼ë¡œì„œ ê°€ëŠ¥
+        //strings.xmlì— ê¸°ë¡ëœ stringì—ì„œ URIê³¼ ì „í™”ë²ˆí˜¸ì— ëŒ€í•œ ë§í¬ë¥¼ ìë™ìœ¼ë¡œ ë‹¬ì•„ì¤Œ 
         setContentView(R.layout.link);
 
-        //KJK_TALK: string¿¡ HTML tag¸¦ ´ŞÀº ¹®ÀÚ¿­À» layoutÀ¸·Î ÀĞ¾î Ã³¸®ÇÏ´Â ¹æ¹ı2
-        //tag¿¡ ´Ş¸° link°¡ µ¿ÀÛÇÏ±â À§ÇØ ¾Æ·¡ setMovementMethod ÇÔ¼ö¸¦ È£ÃâÇØ ÁØ´Ù.
+        //KJK_TALK: stringì— HTML tagë¥¼ ë‹¬ì€ ë¬¸ìì—´ì„ layoutìœ¼ë¡œ ì½ì–´ ì²˜ë¦¬í•˜ëŠ” ë°©ë²•2
+        //tagì— ë‹¬ë¦° linkê°€ ë™ì‘í•˜ê¸° ìœ„í•´ ì•„ë˜ setMovementMethod í•¨ìˆ˜ë¥¼ í˜¸ì¶œí•´ ì¤€ë‹¤.
 
         // text1 shows the android:autoLink property, which
         // automatically linkifies things like URLs and phone numbers
@@ -67,9 +67,9 @@ public class Link extends Activity {
         TextView t2 = (TextView) findViewById(R.id.text2);
         t2.setMovementMethod(LinkMovementMethod.getInstance());
 
-        //KJK_TALK: stingÀ» html¹®ÀÚ¿­·Î ¸¸µé¾î ³õ°í HTML ¹®ÀÚ¿­À» code·Î Ã³¸®ÇÏ´Â ¹æ¹ı3
-        //Á÷Á¢ string¿¡ Html parser¸¦ µ¹·Á text¸¦ Ç¥½ÃÇÑ´Ù.
-        //localization ¶§¹®¿¡ À§ÀÇ ¹æ¹ıµéÀÌ ´õ ÁÁÀº ¹æ¹ıÀÓ 
+        //KJK_TALK: stingì„ htmlë¬¸ìì—´ë¡œ ë§Œë“¤ì–´ ë†“ê³  HTML ë¬¸ìì—´ì„ codeë¡œ ì²˜ë¦¬í•˜ëŠ” ë°©ë²•3
+        //ì§ì ‘ stringì— Html parserë¥¼ ëŒë ¤ textë¥¼ í‘œì‹œí•œë‹¤.
+        //localization ë•Œë¬¸ì— ìœ„ì˜ ë°©ë²•ë“¤ì´ ë” ì¢‹ì€ ë°©ë²•ì„ 
         // text3 shows creating text with links from HTML in the Java
         // code, rather than from a string resource.  Note that for a
         // fixed string, using a (localizable) resource as shown above
@@ -85,8 +85,8 @@ public class Link extends Activity {
                 "created in the Java source code using HTML."));
         t3.setMovementMethod(LinkMovementMethod.getInstance());
 
-        //KJK_TALK: ÀÏ¹İ ¹®ÀÚ¿­À» code·Î Ã³¸®ÇÏ´Â ¹æ¹ı4
-        //¹®ÀÚ¿­À» °´Ã¼·Î ÁöÁ¤ÇÏ°í ±× °´Ã¼¿¡ Æ¯¼ºÀ» ÁØ´Ù.
+        //KJK_TALK: ì¼ë°˜ ë¬¸ìì—´ì„ codeë¡œ ì²˜ë¦¬í•˜ëŠ” ë°©ë²•4
+        //ë¬¸ìì—´ì„ ê°ì²´ë¡œ ì§€ì •í•˜ê³  ê·¸ ê°ì²´ì— íŠ¹ì„±ì„ ì¤€ë‹¤.
         // text4 illustrates constructing a styled string containing a
         // link without using HTML at all.  Again, for a fixed string
         // you should probably be using a string resource, not a
@@ -95,7 +95,7 @@ public class Link extends Activity {
         SpannableString ss = new SpannableString(
 
             "text4: Manually created spans. Click here to dial the phone.");
-        //°¢ ¹®ÀÚ¿­¸¶´Ù Æ¯¼ºÀ» ÁØ´Ù.
+        //ê° ë¬¸ìì—´ë§ˆë‹¤ íŠ¹ì„±ì„ ì¤€ë‹¤.
         ss.setSpan(new StyleSpan(Typeface.BOLD), 0, 30,
                    Spanned.SPAN_EXCLUSIVE_EXCLUSIVE);
         ss.setSpan(new URLSpan("tel:4155551212"), 31+6, 31+10,

@@ -1,8 +1,8 @@
 /*
  * KJK_TALK APIDEMOS: App-> Activity-> Redirection ->RedirectMain.java
- * act A-->B-->C ¼øÀ¸·Î È£ÃâµÉ¶§, Ã³À½½ÇÇà¸¸ A-->C·Î ½ÇÇàµÇ´Â°ÍÃ³·³ º¸ÀÌ´Â ¿¹Á¦
- * Âü°í·Î default °ªÀ» º¸¿©ÁÖ´Â UI¿¡¼­ Ã³À½°ªÀÌ ¾øÀ¸¸é ¹Ù·Î ¼³Á¤È­¸é(act C)À¸·Î °¡°í
- * ÀÕÀ¸¸é ÇöÀç ¼³Á¤°ª(act B)¸¦ º¸¿©ÁÖ´Â ½Ã³ª¸®¿ÀÀÌ´Ù.
+ * act A-->B-->C ìˆœìœ¼ë¡œ í˜¸ì¶œë ë•Œ, ì²˜ìŒì‹¤í–‰ë§Œ A-->Cë¡œ ì‹¤í–‰ë˜ëŠ”ê²ƒì²˜ëŸ¼ ë³´ì´ëŠ” ì˜ˆì œ
+ * ì°¸ê³ ë¡œ default ê°’ì„ ë³´ì—¬ì£¼ëŠ” UIì—ì„œ ì²˜ìŒê°’ì´ ì—†ìœ¼ë©´ ë°”ë¡œ ì„¤ì •í™”ë©´(act C)ìœ¼ë¡œ ê°€ê³ 
+ * ì‡ìœ¼ë©´ í˜„ì¬ ì„¤ì •ê°’(act B)ë¥¼ ë³´ì—¬ì£¼ëŠ” ì‹œë‚˜ë¦¬ì˜¤ì´ë‹¤.
 
 
  * Copyright (C) 2007 The Android Open Source Project
@@ -57,26 +57,26 @@ public class RedirectMain extends Activity {
         // activity that retrieves it.  To do this cleanly, we will
         // temporarily hide our own activity so it is not displayed until the
         // result is returned.
-        // KJK_TALK: onCreate°¡ ³¡³ª¾ß ÇöÀç act°¡ º¸ÀÌ°Ô µÇ´Âµ¥, onCreate¿¡¼­ ´Ù¸¥ act¸¦ È£ÃâÇÏ¹Ç·Î
-        // ÇöÀç act´Â stack¿¡´Â µé¾î°¡Áö¸¸, °ğ¹Ù·Î µÎ¹øÀç activityÀÇ onCreate°¡ È£ÃâµÇ¹Ç·Î µÎ¹øÂ° act°¡ µ¿ÀÛÇÏ°Ô µÈ´Ù.
-        // ´Ù¸¥ act°¡ fininshµÇ¸é Çö act·Î º¹±ÍÇÏ°Ô µÈ´Ù.
-        if (!loadPrefs()) { //KJK_TALK: ±âÁ¸ data°¡ ¾øÀ» °æ¿ì(false), inputÈ­¸éÀ¸·Î ÀÌµ¿ÇÑ´Ù. 
+        // KJK_TALK: onCreateê°€ ëë‚˜ì•¼ í˜„ì¬ actê°€ ë³´ì´ê²Œ ë˜ëŠ”ë°, onCreateì—ì„œ ë‹¤ë¥¸ actë¥¼ í˜¸ì¶œí•˜ë¯€ë¡œ
+        // í˜„ì¬ actëŠ” stackì—ëŠ” ë“¤ì–´ê°€ì§€ë§Œ, ê³§ë°”ë¡œ ë‘ë²ˆì¬ activityì˜ onCreateê°€ í˜¸ì¶œë˜ë¯€ë¡œ ë‘ë²ˆì§¸ actê°€ ë™ì‘í•˜ê²Œ ëœë‹¤.
+        // ë‹¤ë¥¸ actê°€ fininshë˜ë©´ í˜„ actë¡œ ë³µê·€í•˜ê²Œ ëœë‹¤.
+        if (!loadPrefs()) { //KJK_TALK: ê¸°ì¡´ dataê°€ ì—†ì„ ê²½ìš°(false), inputí™”ë©´ìœ¼ë¡œ ì´ë™í•œë‹¤. 
             Intent intent = new Intent(this, RedirectGetter.class);
             startActivityForResult(intent, INIT_TEXT_REQUEST);
-            //finish()°¡ ¾øÀ¸¹Ç·Î ÇöÀç act´Â act stack¿¡ µé¾î°£´Ù.
+            //finish()ê°€ ì—†ìœ¼ë¯€ë¡œ í˜„ì¬ actëŠ” act stackì— ë“¤ì–´ê°„ë‹¤.
         }
     }
-    //KJK_TALK: 2°³ ÀÌ»óÀÇ startActivityForResult°¡ »ç¿ëµÇ¾ùÀ¸¹Ç·Î requestCode·Î ¾î´À act °¡ 
-    //Á¾·áµÇ¾î µé¾îÈ£ÃâµÇ¾ù´ÂÁö °Ë»çÇÑ´Ù. ÀÌ ¿¹Á¦¿¡¼­´Â °°Àº act¸¦ 2°¡Áö ´Ù¸¥ °æ¿ì¿¡ È£ÃâÇÒ¶§
-    //±¸º°ÇÏ´Â ¿ëµµ·Î »ç¿ëÇÏ°í ÀÖ´Ù.
+    //KJK_TALK: 2ê°œ ì´ìƒì˜ startActivityForResultê°€ ì‚¬ìš©ë˜ì—‡ìœ¼ë¯€ë¡œ requestCodeë¡œ ì–´ëŠ act ê°€ 
+    //ì¢…ë£Œë˜ì–´ ë“¤ì–´í˜¸ì¶œë˜ì—‡ëŠ”ì§€ ê²€ì‚¬í•œë‹¤. ì´ ì˜ˆì œì—ì„œëŠ” ê°™ì€ actë¥¼ 2ê°€ì§€ ë‹¤ë¥¸ ê²½ìš°ì— í˜¸ì¶œí• ë•Œ
+    //êµ¬ë³„í•˜ëŠ” ìš©ë„ë¡œ ì‚¬ìš©í•˜ê³  ìˆë‹¤.
     @Override
 	protected void onActivityResult(int requestCode, int resultCode,
 		Intent data) {
         if (requestCode == INIT_TEXT_REQUEST) {
 
             // If the request was cancelled, then we are cancelled as well.
-            if (resultCode == RESULT_CANCELED) { //»ç¿ëÀÚ°¡ ±×³É backÅ°¸¦ ´­·µÀ»°æ¿ì
-                finish();//ÀÌ °æ¿ì A->C ÀÌµ¿ÀÌ¹Ç·Î º¹±Íµµ C->A·Î ¹Ù·ÎÇÏ±â À§ÇØ¼­ ÇöÀç act¸¦ Á¾·áÇÑ´Ù.
+            if (resultCode == RESULT_CANCELED) { //ì‚¬ìš©ìê°€ ê·¸ëƒ¥ backí‚¤ë¥¼ ëˆŒëŸ¿ì„ê²½ìš°
+                finish();//ì´ ê²½ìš° A->C ì´ë™ì´ë¯€ë¡œ ë³µê·€ë„ C->Aë¡œ ë°”ë¡œí•˜ê¸° ìœ„í•´ì„œ í˜„ì¬ actë¥¼ ì¢…ë£Œí•œë‹¤.
 
             // Otherwise, there now should be text...  reload the prefs,
             // and show our UI.  (Optionally we could verify that the text
@@ -117,15 +117,15 @@ public class RedirectMain extends Activity {
         public void onClick(View v) {
             // Erase the preferences and exit!
             SharedPreferences preferences = getSharedPreferences("RedirectData", 0);
-            preferences.edit().remove("text").commit(); //edit interface¿¡¼­ textÇ×¸ñÀ» Áö¿ì°í ÀúÀåÇÑ´Ù.
-            finish();	//ÇöÀç act¸¦ »èÁ¦ÇÑ´Ù.
+            preferences.edit().remove("text").commit(); //edit interfaceì—ì„œ textí•­ëª©ì„ ì§€ìš°ê³  ì €ì¥í•œë‹¤.
+            finish();	//í˜„ì¬ actë¥¼ ì‚­ì œí•œë‹¤.
         }
     };
 
     private OnClickListener mNewListener = new OnClickListener() {
         public void onClick(View v) {
             // Retrieve new text preferences.
-            Intent intent = new Intent(RedirectMain.this, RedirectGetter.class); //input È­¸éÀ¸·Î ÀÌµ¿ÇÑ´Ù.
+            Intent intent = new Intent(RedirectMain.this, RedirectGetter.class); //input í™”ë©´ìœ¼ë¡œ ì´ë™í•œë‹¤.
             startActivityForResult(intent, NEW_TEXT_REQUEST);
         }
     };

@@ -1,6 +1,6 @@
 /*
  KJK_TALK APIDEMOS: App-> Activity-> ReceiveResult->SendResult.java
- ReceiveResult¿¡ °á°ú°ªÀ» Àü´ŞÇÏ´Â ¿¹Á¦
+ ReceiveResultì— ê²°ê³¼ê°’ì„ ì „ë‹¬í•˜ëŠ” ì˜ˆì œ
 
 
  * Copyright (C) 2007 The Android Open Source Project
@@ -66,7 +66,7 @@ public class SendResult extends Activity
         {
             // To send a result, simply call setResult() before your
             // activity is finished.
-            // KJK_TALK: °á°ú°ªÀ» º¸³¾¶§ setResult ÇÔ¼ö¸¦ »ç¿ëÇÑ´Ù.
+            // KJK_TALK: ê²°ê³¼ê°’ì„ ë³´ë‚¼ë•Œ setResult í•¨ìˆ˜ë¥¼ ì‚¬ìš©í•œë‹¤.
             setResult(RESULT_OK, (new Intent()).setAction("Corky!"));
             finish();
         }

@@ -1,9 +1,9 @@
 /*
  * KJK_TALK APIDEMOS: App-> Notification-> NotifyWithText
- Toast »ç¿ë¹ıÀ» º¸¿©ÁÖ´Â ¿¹Á¦
+ Toast ì‚¬ìš©ë²•ì„ ë³´ì—¬ì£¼ëŠ” ì˜ˆì œ
  Toast.makeText(NotifyWithText.this, R.string.short_notification_text,Toast.LENGTH_SHORT).show();
- static methodÀÎ makeText´Â toast¸¦ »ı¼º(new)ÇÏ°í, show·Î displayÇØÁØ´Ù.ÀÔ·ÂÇÏ´Â txt´Â IDÈ¤Àº CharSequence 
- ¸ğµÎ °¡´ÉÇÏ´Ù.
+ static methodì¸ makeTextëŠ” toastë¥¼ ìƒì„±(new)í•˜ê³ , showë¡œ displayí•´ì¤€ë‹¤.ì…ë ¥í•˜ëŠ” txtëŠ” IDí˜¹ì€ CharSequence 
+ ëª¨ë‘ ê°€ëŠ¥í•˜ë‹¤.
 
  * Copyright (C) 2007 The Android Open Source Project
  *
