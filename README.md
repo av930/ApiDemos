@@ -1,6 +1,6 @@
 # ApiDemos
 
-## This project is for verifying compile environments in both of Android Studio and Intellj, which are major editors in Android world.
+## This project is for verifying compile environments in both of Android Studio and IntellJ, which are major editors in Android world.
 
 Android Studio is a fork of Intellij and has its own feature fit to Android.
 However it functionality of IDE is limited within Android, because it is free.
