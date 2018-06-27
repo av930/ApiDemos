@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/github-ApiDemos-intellij-withoutGradle.iml" filepath="$PROJECT_DIR$/github-ApiDemos-intellij-withoutGradle.iml" />
+      <module fileurl="file://$PROJECT_DIR$/IntelliJ-withoutGradle.iml" filepath="$PROJECT_DIR$/IntelliJ-withoutGradle.iml" />
     </modules>
   </component>
 </project>

@@ -17,13 +17,20 @@
 package com.example.android.apis.app;
 
 /**
- * Example of a callback interface used by IRemoteService to send
- * synchronous notifications back to its clients.  Note that this is a
- * one-way interface so the server does not block waiting for the client.
- */ //KJK_TALK Oneway는 server가 해당 method를 non blocking call을 하는것을 말한다.
-oneway interface IRemoteServiceCallback {
+ * Example of a secondary interface associated with a service.  (Note that
+ * the interface itself doesn't impact, it is just a matter of how you
+ * retrieve it from the service.)
+ */
+interface ISecondary {
     /**
-     * Called when the service has a new value for you.
+     * Request the PID of this service, to do evil things with it.
      */
-    void valueChanged(int value);
+    int getPid();
+    
+    /**
+     * This demonstrates the basic types that you can use as parameters
+     * and return values in AIDL.
+     */
+    void basicTypes(int anInt, long aLong, boolean aBoolean, float aFloat,
+            double aDouble, String aString);
 }

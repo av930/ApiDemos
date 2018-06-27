@@ -16,14 +16,22 @@
 
 package com.example.android.apis.app;
 
+import com.example.android.apis.app.IRemoteServiceCallback;
+
 /**
- * Example of a callback interface used by IRemoteService to send
- * synchronous notifications back to its clients.  Note that this is a
- * one-way interface so the server does not block waiting for the client.
- */ //KJK_TALK Oneway는 server가 해당 method를 non blocking call을 하는것을 말한다.
-oneway interface IRemoteServiceCallback {
+ * Example of defining an interface for calling on to a remote service
+ * (running in another process).
+ */
+interface IRemoteService {
     /**
-     * Called when the service has a new value for you.
+     * Often you want to allow a service to call back to its clients.
+     * This shows how to do so, by registering a callback interface with
+     * the service.
      */
-    void valueChanged(int value);
+    void registerCallback(IRemoteServiceCallback cb);
+    
+    /**
+     * Remove a previously registered callback interface.
+     */
+    void unregisterCallback(IRemoteServiceCallback cb);
 }

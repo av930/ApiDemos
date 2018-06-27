@@ -1,7 +1,7 @@
 /*
  * KJK_TALK APIDEMOS: App-> Activity-> ReceiveResult.java
- ÇÏ³ªÀÇ activity°¡ ´Ù¸¥ ÇÏ³ªÀÇ activity¸¦ ½ÇÇàÇÏ°í ½ÇÇà°á°ú¿¡ µû¸¥ °á°ú°ªÀ» 
- ¹Ş´Â°ÍÀ» º¸¿©ÁÖ´Â ¿¹Á¦·Î ±× °á°ú°ªÀº resultcode¿Í intent·Î µé¾î¿À°Ô µÈ´Ù.
+ í•˜ë‚˜ì˜ activityê°€ ë‹¤ë¥¸ í•˜ë‚˜ì˜ activityë¥¼ ì‹¤í–‰í•˜ê³  ì‹¤í–‰ê²°ê³¼ì— ë”°ë¥¸ ê²°ê³¼ê°’ì„ 
+ ë°›ëŠ”ê²ƒì„ ë³´ì—¬ì£¼ëŠ” ì˜ˆì œë¡œ ê·¸ ê²°ê³¼ê°’ì€ resultcodeì™€ intentë¡œ ë“¤ì–´ì˜¤ê²Œ ëœë‹¤.
 
 
  * Copyright (C) 2007 The Android Open Source Project
@@ -110,8 +110,8 @@ public class ReceiveResult extends Activity {
      *                    startActivity().
      * @param resultCode From sending activity as per setResult().
      * @param data From sending activity as per setResult().
-     KJK_TALK: onActivityResult ÀÌ ÇÔ¼ö´Â startActivityForResult¸¦ »ç¿ëÇÏ¿© B act¸¦ È£ÃâÇÑÈÄ
-     ±×°ÍÀÌ Á¾·áµÉ¶§ ÀÚµ¿À¸·Î cbÇÔ¼öÃ³·³ È£ÃâµÇ°Ô µÈ´Ù.
+     KJK_TALK: onActivityResult ì´ í•¨ìˆ˜ëŠ” startActivityForResultë¥¼ ì‚¬ìš©í•˜ì—¬ B actë¥¼ í˜¸ì¶œí•œí›„
+     ê·¸ê²ƒì´ ì¢…ë£Œë ë•Œ ìë™ìœ¼ë¡œ cbí•¨ìˆ˜ì²˜ëŸ¼ í˜¸ì¶œë˜ê²Œ ëœë‹¤.
      */
     @Override
 	protected void onActivityResult(int requestCode, int resultCode,
@@ -119,8 +119,8 @@ public class ReceiveResult extends Activity {
         // You can use the requestCode to select between multiple child
         // activities you may have started.  Here there is only one thing
         // we launch.
-        //¿©·¯°³ÀÇ startActivityForResult¸¦ »ç¿ëÇÒ¶§, onActivityResultµµ ¿©·¯°³°¡ ¿À´Âµ¥
-        //ÀÌ¶§, ¾î¶² Act°¡ Á¾·áµÇ¾î ¿À´ÂÁö ±¸º°ÇÏ±â À§ÇØ GET_COED ¸¦ »ç¿ë
+        //ì—¬ëŸ¬ê°œì˜ startActivityForResultë¥¼ ì‚¬ìš©í• ë•Œ, onActivityResultë„ ì—¬ëŸ¬ê°œê°€ ì˜¤ëŠ”ë°
+        //ì´ë•Œ, ì–´ë–¤ Actê°€ ì¢…ë£Œë˜ì–´ ì˜¤ëŠ”ì§€ êµ¬ë³„í•˜ê¸° ìœ„í•´ GET_COED ë¥¼ ì‚¬ìš©
         if (requestCode == GET_CODE) {
 
             // We will be adding to our text.
@@ -154,8 +154,8 @@ public class ReceiveResult extends Activity {
         public void onClick(View v) {
             // Start the activity whose result we want to retrieve.  The
             // result will come back with request code GET_CODE.
-            Intent intent = new Intent(ReceiveResult.this, SendResult.class);//SendResult.class ¶ó´Â act¸¦ launch
-            startActivityForResult(intent, GET_CODE);//startActivityForResult A°¡ B¸¦ ½ÇÇàÈÄ BÀÇ ½ÇÇà°ªÀ» ¸®ÅÏ¹ŞÀ»¶§
+            Intent intent = new Intent(ReceiveResult.this, SendResult.class);//SendResult.class ë¼ëŠ” actë¥¼ launch
+            startActivityForResult(intent, GET_CODE);//startActivityForResult Aê°€ Bë¥¼ ì‹¤í–‰í›„ Bì˜ ì‹¤í–‰ê°’ì„ ë¦¬í„´ë°›ì„ë•Œ
         }
     };
 
