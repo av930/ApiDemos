@@ -2,7 +2,6 @@
 <project version="4">
   <component name="CompilerConfiguration">
     <excludeFromCompile>
-      <file url="file://$PROJECT_DIR$/src/com/example/android/apis/inputmethod/HintLocales.java" />
       <file url="file://$PROJECT_DIR$/src/com/example/android/apis/os/MmsWapPushReceiver.java" />
       <file url="file://$PROJECT_DIR$/src/com/example/android/apis/os/MmsMessagingDemo.java" />
       <file url="file://$PROJECT_DIR$/src/com/example/android/apis/app/PrintBitmap.java" />
