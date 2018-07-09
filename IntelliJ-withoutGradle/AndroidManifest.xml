@@ -50,7 +50,7 @@
     <uses-feature android:name="android.hardware.camera" />
     <uses-feature android:name="android.hardware.camera.autofocus" android:required="false" />
 
-    <uses-sdk android:minSdkVersion="23" android:targetSdkVersion="23" />
+    <uses-sdk android:minSdkVersion="16" android:targetSdkVersion="23" />
 
     <!--KJK_TALK: activity를 담고있는 Application이름-->
     <application android:name="ApiDemosApplication"
