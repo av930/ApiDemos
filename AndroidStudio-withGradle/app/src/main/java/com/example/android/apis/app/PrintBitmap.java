@@ -25,7 +25,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.webkit.WebView;
 import android.widget.ImageView;
-
 import com.example.android.apis.R;
 
 /**
