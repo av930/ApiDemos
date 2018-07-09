@@ -20,12 +20,11 @@ import android.graphics.Bitmap;
 import android.graphics.drawable.BitmapDrawable;
 import android.os.Bundle;
 import android.print.PrintManager;
-import android.support.v4.print.PrintHelper;
+import android.support.v4.print .PrintHelper;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.webkit.WebView;
 import android.widget.ImageView;
-
 import com.example.android.apis.R;
 
 /**
