@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<classpath>
+	<classpathentry exported="true" kind="con" path="org.eclipse.andmore.ANDROID_FRAMEWORK"/>
+	<classpathentry exported="true" kind="lib" path="D:/_MyMisc/android-sdk-windows/extras/android/m2repository/com/android/support/support-annotations/21.0.3/support-annotations-21.0.3.jar"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.andmore.LIBRARIES"/>
+	<classpathentry exported="true" kind="con" path="org.eclipse.andmore.DEPENDENCIES"/>
+	<classpathentry excluding="com/example/android/apis/os/MmsMessagingDemo.java|com/example/android/apis/os/MmsWapPushReceiver.java|com/example/android/apis/app/PrintBitmap.java" kind="src" path="src"/>
+	<classpathentry kind="src" path="gen"/>
+	<classpathentry kind="output" path="bin/classes"/>
+</classpath>
