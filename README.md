@@ -12,12 +12,29 @@ Anyway, In this project, I use Android sample app "ApiDemos" and check if they c
 Please refer my work. 
 
 *Editor Version*
-1. Android Studio 3.1.3 with Gradle
+1. Android Studio with Gradle : Community version 3.1.3 
 2. IntelliJ Communitiy Version without Gradle
-3. Eclipse without Gradle (supporting Android is deprecated)
+3. Eclipse without Gradle (supporting Android is deprecated) : Version: Photon Release (4.8.0)
 
 *Android Version*
-minSdkVersion="16" //JellyBean
-targetSdkVersion="23" //Marshmallow
-compileSdkVersion="26" //Oreo
-buildToolVersion="28" //PeanutButter
+buildToolVersion="28" //build tool version, PeanutButter, common in all 
+compileSdkVersion="26" //version of android.jar, Oreo, common in all 
+minSdkVersion="16" //in AndroidManifest.xml, JellyBean, AndroidStudio & IntelliJ 
+targetSdkVersion="23" //in AndroidManifest.xml, Marshmallow, common in all 
+
+*Exculde files*
+com/example/android/apis/app/PrintBitmap.java (included in AndroidStudio)
+com/example/android/apis/os/MmsMessagingDemo.java
+com/example/android/apis/os/MmsWapPushReceiver.java
+
+*Exception*
+In Eclipse, There are a lot of strict error for minSdkVersion and targetSdkVersion
+android:minSdkVersion="23" android:targetSdkVersion="23"
+
+*TodoList*
+add Android Support Library in IntelliJ & Eclipse
+
+*reference for Eclipse*
+https://github.com/dandar3
+https://dandar3.blogspot.com/search/label/Android
+
