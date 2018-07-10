@@ -30,6 +30,7 @@ android {
     dependencies {
         implementation fileTree(dir: 'libs', include: ['*.jar'])
         implementation 'com.android.support:support-v4:21.+'
+        implementation 'com.android.support:support-annotations:21.+'
     }
 
 }
