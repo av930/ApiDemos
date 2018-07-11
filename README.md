@@ -14,14 +14,16 @@ Please refer my work.
 3. Eclipse without Gradle (supporting Android is deprecated) : Version: Photon Release (4.8.0)
 
 
-### android Version 
+### Android Version 
 * buildToolVersion="28" //build tool version, PeanutButter, common in all 
 * commpileSdkVersion="26" //version of android.jar, Oreo, common in all 
 * minSdkVersion="16" //in AndroidManifest.xml, JellyBean, AndroidStudio & IntelliJ 
 * targetSdkVersion="23" //in AndroidManifest.xml, Marshmallow, common in all 
 
 
-### Exclude files
+### ApiDemos Version
+it is from tag android-8.1.0_r32 from full source.
+your refer commit 2017.12.19. master in https://github.com/aosp-mirror/platform_development
 * com/example/android/apis/app/PrintBitmap.java (included in AndroidStudio)
 * com/example/android/apis/os/MmsMessagingDemo.java
 * com/example/android/apis/os/MmsWapPushReceiver.java
