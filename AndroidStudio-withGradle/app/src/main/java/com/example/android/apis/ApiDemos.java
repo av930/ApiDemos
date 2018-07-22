@@ -1,6 +1,4 @@
 /*
- * KJK_TALK APIDEMOS: Entry Point 
-
  * Copyright (C) 2007 The Android Open Source Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -32,7 +30,7 @@ import java.text.DecimalFormat;
 import java.util.*;
 
 /**
- * KJK_TALK: List Menu를 만들어내는 Activity
+ * KJK_TALK: API Demos Main List Menu를 만들어내는 Activity
  *
  */
 public class ApiDemos extends ListActivity {
@@ -222,6 +220,16 @@ public class ApiDemos extends ListActivity {
 		Map<String, Object> temp = new HashMap<String, Object>();
 		// temp.put에서는 temp에다가 <string,Object>로 된 item을 만들어서 put해준다.
 		// temp는 항상 Map<string, ?> 로 된 format이어야 한다.
+
+        // change label name
+		switch(name){
+			case "Activity":
+			case "App":
+			    name = "1." + name;
+			    break;
+            default:
+                break;
+		}
 		temp.put("title", name);
 		// 실제 temp의 item으로 들어가는 <String, Object>는 temp.put method에서 new해준다.
 		// ArrayList->HashMap->HashMap$Entry.<String, Object>

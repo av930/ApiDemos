@@ -1,9 +1,4 @@
 /*
- * KJK_TALK APIDEMOS: App-> Activity-> Translucent
- * AndroidManifest.xml파일에서 @style/Theme.Translucent속성을 통해 default로 설정된 
- * Foreground가 반투명하게 되어 기존 list Background가 보인다.
-
-
  * Copyright (C) 2007 The Android Open Source Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -29,6 +24,10 @@ import android.app.Activity;
 import android.os.Bundle;
 
 /**
+ * KJK_TALK APIDEMOS: App-> Activity-> Translucent
+ * AndroidManifest.xml파일에서 @style/Theme.Translucent속성을 통해 default로 설정된
+ * Foreground가 반투명하게 되어 기존 list Background가 보인다.
+
  * <h3>Translucent Activity</h3>
  * 
  * <p>This demonstrates the how to write an activity that is translucent,

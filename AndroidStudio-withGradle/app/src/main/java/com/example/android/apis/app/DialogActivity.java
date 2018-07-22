@@ -1,8 +1,4 @@
 /*
- * KJK_TALK APIDEMOS: App-> Activity-> Dialog 
- * activity를 이용하여 dialog 처럼 보이도록 하는 방법. theme를 이용한다.
- * AndroidManifest.xml 에서 @android:style/Theme.Dialog 로 선언되어 잇어 dialog처럼 보인다.
-
  * Copyright (C) 2008 The Android Open Source Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
@@ -34,6 +30,10 @@ import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 /**
+ * KJK_TALK APIDEMOS: App-> Activity-> Dialog
+ * activity를 이용하여 dialog 처럼 보이도록 하는 방법. theme를 이용한다.
+ * AndroidManifest.xml 에서 @android:style/Theme.Dialog 로 선언되어 있어 dialog처럼 보인다.
+ *
  * <h3>Dialog Activity</h3>
  *
  * <p>This demonstrates the how to write an activity that looks like
